@@ -1,0 +1,11 @@
+[realms]
+    CC.IN2P3.FR = {
+        default_domain  = idm.cc.in2p3.fr
+        kpasswd_server  = ccidm01.in2p3.fr
+        admin_server    = ccidm01.in2p3.fr
+        kdc             = ccidm01.in2p3.fr:88
+        kdc             = ccidm02.in2p3.fr:88
+        kdc             = ccidm03.in2p3.fr:88
+        kdc             = ccidm04.in2p3.fr:88
+    }
+
