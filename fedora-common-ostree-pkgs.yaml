@@ -60,7 +60,6 @@ packages:
   - fedora-workstation-repositories
   - file
   - filesystem
-  - firefox
   - firewalld
   - fpaste
   - fros-gnome
@@ -137,7 +136,6 @@ packages:
   - policycoreutils-python-utils
   - procps-ng
   - psmisc
-  - qemu-guest-agent
   - qt5-qtbase
   - qt5-qtbase-gui
   - qt5-qtdeclarative
@@ -153,8 +151,6 @@ packages:
   - setup
   - shadow-utils
   - sos
-  - spice-vdagent
-  - spice-webdavd
   - sssd
   - sssd-common
   - sssd-kcm
@@ -186,17 +182,11 @@ packages:
 packages-x86_64:
   - alsa-sof-firmware
   - amd-ucode-firmware
-  - cirrus-audio-firmware
-  - hyperv-daemons
   - intel-audio-firmware
   - mcelog
   - microcode_ctl
-  - open-vm-tools-desktop
   - thermald
-  - virtualbox-guest-additions
 packages-aarch64:
-  - hyperv-daemons
-  - open-vm-tools-desktop
   - qcom-firmware
 packages-ppc64le:
   - lsvpd

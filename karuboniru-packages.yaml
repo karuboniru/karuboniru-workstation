@@ -1,0 +1,55 @@
+include: fedora-silverblue.yaml
+ref: fedora/39/${basearch}/karuboniru-silverblue
+rojig:
+  name: fedora-silverblue
+  summary: "Fedora Silverblue base image"
+  license: MIT
+
+packages:
+  - fcitx5
+  - fcitx5-autostart
+  - fcitx5-chinese-addons
+  - fcitx5-configtool
+  - fcitx5-gtk
+  - fcitx5-mozc
+  - fcitx5-qt
+  - zsh
+  - htop
+  - wireguard-tools
+  - systemd-container
+
+repos:
+  - fedora-39
+  - fedora-39-updates
+  - fedora-39-updates-testing
+
+postprocess:
+  - |
+    systemctl enable sshd.socket
+    systemctl enable rpm-ostreed-automatic.timer
+
+add-files:
+  [
+    [
+      "./etc/systemd/system.conf.d/accounting.conf",
+      /etc/systemd/system.conf.d/accounting.conf",
+    ],
+    ["./etc/udev/rules.d/keyboard.rules", "/etc/udev/rules.d/keyboard.rules"],
+    [
+      "./etc/udev/rules.d/logitech-unifying.rules",
+      "/etc/udev/rules.d/logitech-unifying.rules",
+    ],
+    ["./etc/udev/rules.d/nvme-usb.rules", "/etc/udev/rules.d/nvme-usb.rules"],
+    ["./etc/udev/rules.d/rtl-sdr.rules", "/etc/udev/rules.d/rtl-sdr.rules"],
+    ["./etc/udev/rules.d/wd-disk.rules", "/etc/udev/rules.d/wd-disk.rules"],
+    [
+      "./etc/polkit-1/rules.d/49-nopasswd_global.rules",
+      /etc/polkit-1/rules.d/49-nopasswd_global.rules,
+    ],
+    ["./etc/krb5.conf.d/CC_IN2P3_FR", "/etc/krb5.conf.d/CC_IN2P3_FR"],
+    [
+      "./etc/ssh/sshd_config.d/40-nopassword.conf",
+      "/etc/ssh/sshd_config.d/40-nopassword.conf",
+    ],
+    ["./etc/rpm-ostreed.conf", "/etc/rpm-ostreed.conf"],
+  ]
