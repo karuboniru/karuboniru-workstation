@@ -63,7 +63,6 @@ packages:
   - fedora-workstation-repositories
   - file
   - filesystem
-  - firefox
   - firewalld
   - fpaste
   - fros-gnome
@@ -144,7 +143,6 @@ packages:
   - prefixdevname
   - procps-ng
   - psmisc
-  - qemu-guest-agent
   - qt5-qtbase
   - qt5-qtbase-gui
   - qt5-qtdeclarative
@@ -201,7 +199,6 @@ packages-x86_64:
   - mcelog
   - microcode_ctl
   - thermald
-  - virtualbox-guest-additions
 packages-aarch64:
   - qcom-firmware
   - qrtr
