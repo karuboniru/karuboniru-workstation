@@ -1,4 +1,6 @@
-include: fedora-silverblue.yaml
+include:
+  - fedora-silverblue.yaml
+  - bootupd.yaml
 ref: fedora/39/${basearch}/karuboniru-silverblue
 rojig:
   name: fedora-silverblue
@@ -17,12 +19,7 @@ packages:
   - htop
   - wireguard-tools
   - systemd-container
-  # ROOT with pythia6
-  - root-montecarlo-pythia6
-  - root
-  - root-genvector
-  - root-smatrix
-  - root-geom
+  - bootc
   # GENIE & NuWro build dependencies
   - libxml2-devel
   - pythia6-devel
@@ -52,7 +49,6 @@ packages:
   - gdb
   - xrootd-client
   - xrootd-voms
-  - root-netx
   - rclone
   # vscode
   - code
@@ -81,6 +77,20 @@ packages:
   - "perl(File::Temp)"
   - "perl(File::Glob)"
   - "perl(File::Spec)"
+
+repo-packages:
+  - repo: pythia6
+    packages:
+      # ROOT with pythia6
+      - root-montecarlo-pythia6
+      - root
+      - root-genvector
+      - root-smatrix
+      - root-geom
+      - root-netx
+
+exclude-packages:
+  - low-memory-monitor
 
 repos:
   - fedora-39
