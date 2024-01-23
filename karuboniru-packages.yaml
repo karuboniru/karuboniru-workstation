@@ -56,6 +56,31 @@ packages:
   - rclone
   # vscode
   - code
+  # for running TexLive
+  - "perl(Config)"
+  - "perl(Cwd)"
+  - "perl(Digest::MD5)"
+  - "perl(Encode)"
+  - "perl(File::Basename)"
+  - "perl(File::Copy)"
+  - "perl(File::Find)"
+  - "perl(File::Glob)"
+  - "perl(File::Path)"
+  - "perl(File::Spec::Functions)"
+  - "perl(FileHandle)"
+  - "perl(List::Util)"
+  - "perl(Time::HiRes)"
+  - "perl(Unicode::Normalize)"
+  - "perl(feature)"
+  - "perl(sigtrap)"
+  - "perl(utf8)"
+  - "perl(vars)"
+  - "perl(warnings)"
+  - "perl(File::Find)"
+  - "perl(File::Basename)"
+  - "perl(File::Temp)"
+  - "perl(File::Glob)"
+  - "perl(File::Spec)"
 
 repos:
   - fedora-39
