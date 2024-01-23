@@ -17,10 +17,51 @@ packages:
   - htop
   - wireguard-tools
   - systemd-container
+  # ROOT with pythia6
+  - root-montecarlo-pythia6
+  - root
+  - root-genvector
+  - root-smatrix
+  - root-geom
+  # GENIE & NuWro build dependencies
+  - libxml2-devel
+  - pythia6-devel
+  - log4cpp-devel
+  - libnsl2-devel
+  - lhapdf-devel
+  # GiBUU
+  - /usr/lib64/libbz2.so
+  # Fedora
+  - koji
+  - fedpkg
+  # General building tools
+  - libasan
+  - binwalk
+  - valgrind
+  - /usr/include/eigen3
+  - json-devel
+  - strace
+  - clang-tools-extra
+  - bear
+  - patch
+  - ninja-build
+  - cmake
+  - gcc
+  - gcc-c++
+  - meson
+  - gdb
+  - xrootd-client
+  - xrootd-voms
+  - root-netx
+  - rclone
+  # vscode
+  - code
 
 repos:
   - fedora-40
   - fedora-40-updates
+  - pythia6
+  - vscode
 
 postprocess:
   - |
