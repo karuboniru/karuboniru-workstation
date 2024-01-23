@@ -77,6 +77,8 @@ packages:
   - "perl(File::Temp)"
   - "perl(File::Glob)"
   - "perl(File::Spec)"
+  # for full curl
+  - libcurl
 
 repo-packages:
   - repo: pythia6
