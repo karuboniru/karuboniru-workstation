@@ -1,0 +1,17 @@
+include: fedora-silverblue.yaml
+ref: fedora/39/${basearch}/karuboniru-silverblue
+rojig:
+  name: fedora-silverblue
+  summary: "Fedora Silverblue base image"
+  license: MIT
+
+arch-include:
+  x86_64: bootupd.yaml
+  aarch64: bootupd.yaml
+
+packages:
+  - bootc
+
+repos:
+  - fedora-39
+  - fedora-39-updates

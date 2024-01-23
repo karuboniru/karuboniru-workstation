@@ -6,8 +6,6 @@ name: Build Ostree Container Image
 # documentation.
 
 on:
-  schedule:
-    - cron: '00 9 * * *'
   push:
     branches: [ '*' ]
 
