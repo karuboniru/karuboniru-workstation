@@ -1,4 +1,12 @@
-# Manifests for Fedora Atomic Desktops variants
+# Modified base image for Fedora Silverblue
+[![Build Ostree Container Image](https://github.com/karuboniru/karuboniru-workstation/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/karuboniru/karuboniru-workstation/actions/workflows/docker-publish.yml)
+
+This is for building a custom base image for Fedora SilverBlue for personal use.
+
+Images are built in Github Actions and uploaded to QUAY.
+
+***
+# Manifests for rpm-ostree based Fedora variants
 
 This is the configuration needed to create
 [rpm-ostree](https://coreos.github.io/rpm-ostree/) based, desktop variants of
