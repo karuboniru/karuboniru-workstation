@@ -20,6 +20,7 @@ jobs:
       options: --privileged
     permissions:
       contents: read
+      packages: write
       id-token: write
 
     steps:
@@ -28,10 +29,10 @@ jobs:
       
       - name: Build
         env:
-          registry: ${{ vars.REGISTRY }}
-          username: ${{ vars.QUAY_USER }}
-          password: ${{ secrets.QUAY_PASSWORD }}    
-          image: ${{ vars.IMAGE_NAME }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}   
+          image: ${{ github.repository }}
           tag: ${{ github.ref_name }}
           composefile: ${{ vars.COMPOSEFILE }} 
         run: |
@@ -42,6 +43,6 @@ jobs:
           rpm-ostree compose image --initialize-mode=if-not-exists \
             --format registry --layer-repo repo --cachedir=cache \
             $composefile \
-            $registry/$username/$image:$tag
+            $registry/$image:$tag
 
         
