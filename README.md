@@ -3,7 +3,7 @@
 
 This is for building a custom base image for Fedora SilverBlue for personal use.
 
-Images are built in Github Actions and uploaded to QUAY.
+Images are built in Github Actions and uploaded to ghcr.
 
 ***
 # Manifests for rpm-ostree based Fedora variants
