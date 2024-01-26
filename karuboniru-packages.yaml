@@ -140,7 +140,7 @@ add-files:
   [
     [
       "./etc/systemd/system.conf.d/accounting.conf",
-      /etc/systemd/system.conf.d/accounting.conf",
+      "/etc/systemd/system.conf.d/accounting.conf",
     ],
     ["./etc/udev/rules.d/keyboard.rules", "/etc/udev/rules.d/keyboard.rules"],
     [
