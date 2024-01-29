@@ -77,6 +77,8 @@ packages:
   - "perl(File::Spec)"
   # for full curl
   - libcurl
+  # there can be cases where aardvark-dns is missing
+  - aardvark-dns
 
 repo-packages:
   - repo: pythia6
