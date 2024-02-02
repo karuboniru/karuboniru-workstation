@@ -71,10 +71,19 @@ packages:
   - "perl(vars)"
   - "perl(warnings)"
   - "perl(File::Find)"
-  - "perl(File::Basename)"
   - "perl(File::Temp)"
   - "perl(File::Glob)"
   - "perl(File::Spec)"
+  - "perl(Data::Dumper)"
+  - "perl(File::HomeDir)"
+  - "perl(FindBin)"
+  - "perl(Getopt::Long)"
+  - "perl(Text::Tabs)"
+  - "perl(Text::Wrap)"
+  - "perl(YAML::Tiny)"
+  - "perl(lib)"
+  - "perl(open)"
+  - "perl(strict)"
   # for full curl
   - libcurl
   # there can be cases where aardvark-dns is missing
