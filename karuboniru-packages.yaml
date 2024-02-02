@@ -132,6 +132,7 @@ repo-packages:
 
 exclude-packages:
   - low-memory-monitor
+  - passim
 
 repos:
   - fedora-40
