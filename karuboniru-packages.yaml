@@ -29,6 +29,7 @@ packages:
   # Fedora
   - koji
   - fedpkg
+  - copr-cli
   # General building tools
   - libasan
   - binwalk
