@@ -1,5 +1,5 @@
 include: gnome-desktop-pkgs.yaml
-ref: fedora/rawhide/${basearch}/silverblue
+ref: fedora/40/${basearch}/silverblue
 rojig:
   name: fedora-silverblue
   summary: "Fedora Silverblue base image"
@@ -31,6 +31,5 @@ exclude-packages:
   - gnome-software-fedora-langpacks
 
 repos:
-  - fedora-rawhide
-  # - fedora-40
-  # - fedora-40-updates
+  - fedora-40
+  - fedora-40-updates

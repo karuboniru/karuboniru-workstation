@@ -1,5 +1,5 @@
 include: budgie-desktop-pkgs.yaml
-ref: fedora/rawhide/${basearch}/onyx
+ref: fedora/40/${basearch}/onyx
 rojig:
   name: fedora-onyx
   summary: "Fedora Onyx (Budgie) base image"
@@ -14,6 +14,5 @@ exclude-packages:
   - tracker-miners
 
 repos:
-  - fedora-rawhide
-  # - fedora-40
-  # - fedora-40-updates
+  - fedora-40
+  - fedora-40-updates
