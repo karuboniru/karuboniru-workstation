@@ -11,7 +11,3 @@ packages:
   - fedora-release-ostree-desktop
   # Portals for Flatpak
   - xdg-desktop-portal-gtk
-
-repos:
-  - fedora-40
-  - fedora-40-updates

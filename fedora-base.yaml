@@ -14,7 +14,3 @@ packages:
   # Portals for Flatpak
   - xdg-desktop-portal
   - xdg-desktop-portal-gtk
-
-repos:
-  - fedora-40
-  - fedora-40-updates

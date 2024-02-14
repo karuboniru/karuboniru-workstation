@@ -137,3 +137,7 @@ postprocess:
     ln -snf /usr/libexec/samba/cups_backend_smb /usr/lib/cups/backend/smb
 
 postprocess-script: "postprocess.sh"
+
+repos:
+  - fedora-40
+  - fedora-40-updates

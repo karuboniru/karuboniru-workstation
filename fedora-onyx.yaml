@@ -12,7 +12,3 @@ exclude-packages:
   # Not needed in Budgie Desktop
   - tracker
   - tracker-miners
-
-repos:
-  - fedora-40
-  - fedora-40-updates

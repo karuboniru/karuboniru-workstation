@@ -15,7 +15,3 @@ packages:
   - plasma-systemsettings
   # Portals for Flatpak
   - xdg-desktop-portal-kde
-
-repos:
-  - fedora-40
-  - fedora-40-updates

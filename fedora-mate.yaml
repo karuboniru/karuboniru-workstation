@@ -13,7 +13,3 @@ packages:
 
 exclude-packages:
   - python3-unbound
-
-repos:
-  - fedora-40
-  - fedora-40-updates

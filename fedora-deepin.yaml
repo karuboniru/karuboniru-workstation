@@ -11,7 +11,3 @@ packages:
   - fedora-release-ostree-desktop
   # GUI to manage updates & Flatpaks
   - gnome-software
-
-repos:
-  - fedora-40
-  - fedora-40-updates
