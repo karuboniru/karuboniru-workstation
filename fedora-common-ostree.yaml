@@ -1,7 +1,8 @@
 ref: fedora/40/${basearch}/ostree-base
 
-automatic_version_prefix: "40.<date:%Y%m%d>"
-mutate-os-release: "40"
+releasever: 40
+automatic_version_prefix: "${releasever}.<date:%Y%m%d>"
+mutate-os-release: "${releasever}"
 
 # Default to `bash` in our container, the same as other containers we ship.
 container-cmd:
