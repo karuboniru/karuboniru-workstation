@@ -13,3 +13,8 @@ packages:
 
 exclude-packages:
   - python3-unbound
+
+# Kept in the leaf manifest as they are overwritten by Pungi in composes
+repos:
+  - fedora-40
+  - fedora-40-updates

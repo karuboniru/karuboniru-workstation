@@ -11,3 +11,8 @@ packages:
   - fedora-release-ostree-desktop
   # Portals for Flatpak
   - xdg-desktop-portal-gtk
+
+# Kept in the leaf manifest as they are overwritten by Pungi in composes
+repos:
+  - fedora-40
+  - fedora-40-updates

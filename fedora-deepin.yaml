@@ -11,3 +11,8 @@ packages:
   - fedora-release-ostree-desktop
   # GUI to manage updates & Flatpaks
   - gnome-software
+
+# Kept in the leaf manifest as they are overwritten by Pungi in composes
+repos:
+  - fedora-40
+  - fedora-40-updates

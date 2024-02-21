@@ -36,3 +36,8 @@ exclude-packages:
   # Ensure we do not include X11 support
   - plasma-x11
   - plasma-workspace-x11
+
+# Kept in the leaf manifest as they are overwritten by Pungi in composes
+repos:
+  - fedora-40
+  - fedora-40-updates
