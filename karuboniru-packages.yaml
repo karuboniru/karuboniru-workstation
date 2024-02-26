@@ -146,6 +146,8 @@ postprocess:
   - |
     systemctl enable sshd.socket
     systemctl enable rpm-ostreed-automatic.timer
+    rm /etc/grub.d/30_os-prober
+    echo -e '[composefs]\nenabled=yes' >> /usr/lib/ostree/prepare-root.conf
 
 add-files:
   [
