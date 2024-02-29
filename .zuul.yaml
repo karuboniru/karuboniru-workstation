@@ -2,32 +2,14 @@
      check:
        jobs:
          - validate
-         - compose-base
 
  - job:
      name: validate
-     description: Validate manifests and scripts syntax
+     description: Validate manifests, scripts, dependencies and compose the base image
+     # Increased timeout as builds can take a while
+     timeout: 3600
      run: ci/validate.yaml
      nodeset:
        nodes:
-         - name: container
-           # Replace by a fixed version label after branching, once available:
-           # https://fedora.softwarefactory-project.io/zuul/labels
-           # The Fedora 40 container is not yet available:
-           # https://pagure.io/fedora-ci/general/issue/458
-           # label: zuul-worker-f40
-           label: zuul-worker-f38
-
- - job:
-     name: compose-base
-     description: Test composing the base variant
-     timeout: 3600
-     run: ci/compose-base.yaml
-     nodeset:
-       nodes:
          - name: vm
-           # Replace by a fixed version label after branching, once available:
-           # https://fedora.softwarefactory-project.io/zuul/labels
-           # Fedora 40 cloud images are not yet available
-           # label: cloud-fedora-40-medium
-           label: cloud-fedora-39-medium
+           label: cloud-fedora-40-medium
