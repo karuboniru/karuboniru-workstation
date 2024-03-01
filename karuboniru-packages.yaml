@@ -139,6 +139,7 @@ exclude-packages:
 repos:
   - fedora-40
   - fedora-40-updates
+  - fedora-40-updates-testing
   - pythia6
   - vscode
 
