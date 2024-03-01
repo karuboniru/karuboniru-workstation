@@ -1,15 +1,15 @@
- - project:
-     check:
-       jobs:
-         - validate
+- project:
+    check:
+      jobs:
+        - validate
 
- - job:
-     name: validate
-     description: Validate manifests, scripts, dependencies and compose the base image
-     # Increased timeout as builds can take a while
-     timeout: 3600
-     run: ci/validate.yaml
-     nodeset:
-       nodes:
-         - name: vm
-           label: cloud-fedora-40-medium
+- job:
+    name: validate
+    description: Validate manifests, scripts, dependencies and compose the base image
+    # Increased timeout as builds can take a while
+    timeout: 3600
+    run: ci/validate.yaml
+    nodeset:
+      nodes:
+        - name: vm
+          label: cloud-fedora-40-medium
