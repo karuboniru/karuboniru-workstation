@@ -1,5 +1,6 @@
 include:
   - fedora-silverblue.yaml
+  - howdy.yaml
 ref: fedora/40/${basearch}/karuboniru-silverblue
 rojig:
   name: fedora-silverblue
