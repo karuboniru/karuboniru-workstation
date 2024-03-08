@@ -1,0 +1,43 @@
+packages:
+  - howdy 
+  - howdy-gtk
+
+repos:
+  - howdy
+  - fedora-40
+  - fedora-40-updates
+
+postprocess:
+  - |
+    #!/bin/bash
+    set -xeuo pipefail
+    cat <<EOF > /tmp/howdy.te 
+    module howdy 1.0;
+
+    require {
+    type lib_t;
+    type xdm_t;
+    type v4l_device_t;
+    type sysctl_vm_t;
+    type gconf_home_t;
+    class chr_file map;
+    class file { execute create getattr open read write };
+    class dir add_name;
+    }
+
+    #============= xdm_t ==============
+    allow xdm_t lib_t:dir add_name;
+    allow xdm_t gconf_home_t:file execute;
+    allow xdm_t lib_t:file { create write };
+    allow xdm_t sysctl_vm_t:file { getattr open read };
+    allow xdm_t v4l_device_t:chr_file map;
+    EOF
+    checkmodule -M -m -o /tmp/howdy.mod /tmp/howdy.te
+    semodule_package -o /tmp/howdy.pp -m /tmp/howdy.mod
+    semodule -i /tmp/howdy.pp
+    rm /tmp/howdy.te /tmp/howdy.mod /tmp/howdy.pp
+    # Enable howdy pam module for every case
+    sed -i '1i auth        sufficient      pam_howdy.so' /etc/pam.d/{password-auth,system-auth}
+    # workaround for canceling authentication in sudo/polkit
+    # sed -i '1i auth sufficient pam_unix.so try_first_pass likeauth nullok' /etc/pam.d/system-auth
+
