@@ -91,6 +91,8 @@ packages:
   - libcurl
   # there can be cases where aardvark-dns is missing
   - aardvark-dns
+  # for linking against liburing
+  - liburing-devel
 
 repo-packages:
   - repo: pythia6
