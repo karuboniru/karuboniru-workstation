@@ -93,6 +93,10 @@ packages:
   - aardvark-dns
   # for linking against liburing
   - liburing-devel
+  # tpm2 protected ssh key
+  - tpm2-pkcs11
+  - tpm2-pkcs11-tools
+  - tpm2-tools
 
 repo-packages:
   - repo: pythia6
