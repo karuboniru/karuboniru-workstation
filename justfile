@@ -17,7 +17,7 @@ validate:
 # Comps-sync, but without pulling latest
 sync:
     #!/bin/bash
-    set -euxo pipefail
+    set -euo pipefail
 
     if [[ ! -d fedora-comps ]]; then
         git clone https://pagure.io/fedora-comps.git
@@ -30,7 +30,7 @@ sync:
 # Sync the manifests with the content of the comps groups
 comps-sync:
     #!/bin/bash
-    set -euxo pipefail
+    set -euo pipefail
 
     if [[ ! -d fedora-comps ]]; then
         git clone https://pagure.io/fedora-comps.git
@@ -48,7 +48,7 @@ comps-sync:
 # Output the processed manifest for a given variant (defaults to Silverblue)
 manifest variant=default_variant:
     #!/bin/bash
-    set -euxo pipefail
+    set -euo pipefail
 
     variant={{variant}}
     case "${variant}" in
