@@ -1,6 +1,7 @@
 include:
   - fedora-silverblue.yaml
   - howdy.yaml
+  - root-pythia6.yaml
 ref: fedora/40/${basearch}/karuboniru-silverblue
 rojig:
   name: fedora-silverblue
@@ -46,6 +47,7 @@ packages:
   - cmake
   - gcc
   - gcc-c++
+  - gcc-gfortran
   - meson
   - gdb
   - xrootd-client
@@ -98,47 +100,6 @@ packages:
   - tpm2-pkcs11-tools
   - tpm2-tools
 
-repo-packages:
-  - repo: pythia6
-    packages:
-      # ROOT with pythia6
-      - root-fonts
-      - root-icons
-      - root-io
-      - root-mathmore
-      - root-graf-postscript
-      - root-graf-x11
-      - root-graf
-      - root-graf-gpad
-      - root-graf3d
-      - root-hist
-      - root-hist-painter
-      - root-matrix
-      - root-mathcore
-      - root-minuit
-      - root-multiproc
-      - root-net
-      - root-physics
-      - root-tree
-      - root-tree-ntuple
-      - root-graf-asimage
-      - root-gui
-      - root-gui-ged
-      - root-tree-player
-      - root-tree-dataframe
-      - root-vecops
-      - root-core
-      - root-cling
-      - root-montecarlo-eg
-      - root-montecarlo-pythia6
-      - root
-      - root-genvector
-      - root-geom
-      - root-netx
-      - root-smatrix
-      - pythia6
-      - pythia6-devel
-
 exclude-packages:
   - low-memory-monitor
   - passim
@@ -147,7 +108,6 @@ repos:
   - fedora-40
   - fedora-40-updates
   - fedora-40-updates-testing
-  - pythia6
   - vscode
 
 postprocess:
