@@ -1,7 +1,6 @@
 include:
   - fedora-silverblue.yaml
   - howdy.yaml
-  - root-pythia6.yaml
 ref: fedora/40/${basearch}/karuboniru-silverblue
 rojig:
   name: fedora-silverblue
@@ -21,80 +20,11 @@ packages:
   - wireguard-tools
   - systemd-container
   - bootc
-  # GENIE & NuWro build dependencies
-  - libxml2-devel
-  - pythia6-devel
-  - log4cpp-devel
-  - libnsl2-devel
-  - lhapdf-devel
-  # GiBUU
-  - /usr/lib64/libbz2.so
-  # Fedora
-  - koji
-  - fedpkg
-  - copr-cli
-  # General building tools
-  - libasan
-  - binwalk
-  - valgrind
-  - /usr/include/eigen3
-  - json-devel
-  - strace
-  - clang-tools-extra
-  - bear
-  - patch
-  - ninja-build
-  - cmake
-  - gcc
-  - gcc-c++
-  - gcc-gfortran
-  - meson
-  - gdb
-  - xrootd-client
-  - xrootd-voms
-  - rclone
-  # vscode
-  - code
-  # for running TexLive
-  - "perl(Config)"
-  - "perl(Cwd)"
-  - "perl(Digest::MD5)"
-  - "perl(Encode)"
-  - "perl(File::Basename)"
-  - "perl(File::Copy)"
-  - "perl(File::Find)"
-  - "perl(File::Glob)"
-  - "perl(File::Path)"
-  - "perl(File::Spec::Functions)"
-  - "perl(FileHandle)"
-  - "perl(List::Util)"
-  - "perl(Time::HiRes)"
-  - "perl(Unicode::Normalize)"
-  - "perl(feature)"
-  - "perl(sigtrap)"
-  - "perl(utf8)"
-  - "perl(vars)"
-  - "perl(warnings)"
-  - "perl(File::Find)"
-  - "perl(File::Temp)"
-  - "perl(File::Glob)"
-  - "perl(File::Spec)"
-  - "perl(Data::Dumper)"
-  - "perl(File::HomeDir)"
-  - "perl(FindBin)"
-  - "perl(Getopt::Long)"
-  - "perl(Text::Tabs)"
-  - "perl(Text::Wrap)"
-  - "perl(YAML::Tiny)"
-  - "perl(lib)"
-  - "perl(open)"
-  - "perl(strict)"
+
   # for full curl
   - libcurl
   # there can be cases where aardvark-dns is missing
   - aardvark-dns
-  # for linking against liburing
-  - liburing-devel
   # tpm2 protected ssh key
   - tpm2-pkcs11
   - tpm2-pkcs11-tools
@@ -108,7 +38,6 @@ repos:
   - fedora-40
   - fedora-40-updates
   - fedora-40-updates-testing
-  - vscode
 
 postprocess:
   - |
