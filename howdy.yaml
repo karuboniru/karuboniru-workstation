@@ -17,6 +17,7 @@ postprocess:
     require {
     type lib_t;
     type xdm_t;
+    type local_login_t;
     type v4l_device_t;
     type sysctl_vm_t;
     type gconf_home_t;
@@ -31,6 +32,7 @@ postprocess:
     allow xdm_t lib_t:file { create write };
     allow xdm_t sysctl_vm_t:file { getattr open read };
     allow xdm_t v4l_device_t:chr_file map;
+    allow local_login_t v4l_device_t:chr_file { write, map };
     EOF
     checkmodule -M -m -o /tmp/howdy.mod /tmp/howdy.te
     semodule_package -o /tmp/howdy.pp -m /tmp/howdy.mod
