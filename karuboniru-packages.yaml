@@ -99,6 +99,9 @@ packages:
   - tpm2-pkcs11
   - tpm2-pkcs11-tools
   - tpm2-tools
+  # non VF fonts for typst
+  - google-noto-serif-cjk-fonts
+  - google-noto-sans-cjk-fonts
 
 exclude-packages:
   - low-memory-monitor
