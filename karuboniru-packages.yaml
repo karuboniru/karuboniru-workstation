@@ -56,39 +56,16 @@ packages:
   # vscode
   - code
   # for running TexLive
-  - "perl(Config)"
-  - "perl(Cwd)"
-  - "perl(Digest::MD5)"
-  - "perl(Encode)"
-  - "perl(File::Basename)"
-  - "perl(File::Copy)"
-  - "perl(File::Find)"
-  - "perl(File::Glob)"
-  - "perl(File::Path)"
-  - "perl(File::Spec::Functions)"
-  - "perl(FileHandle)"
-  - "perl(List::Util)"
-  - "perl(Time::HiRes)"
-  - "perl(Unicode::Normalize)"
-  - "perl(feature)"
-  - "perl(sigtrap)"
-  - "perl(utf8)"
-  - "perl(vars)"
-  - "perl(warnings)"
-  - "perl(File::Find)"
-  - "perl(File::Temp)"
-  - "perl(File::Glob)"
-  - "perl(File::Spec)"
-  - "perl(Data::Dumper)"
-  - "perl(File::HomeDir)"
-  - "perl(FindBin)"
-  - "perl(Getopt::Long)"
-  - "perl(Text::Tabs)"
-  - "perl(Text::Wrap)"
-  - "perl(YAML::Tiny)"
-  - "perl(lib)"
-  - "perl(open)"
-  - "perl(strict)"
+  - texlive-scheme-medium
+  - texlive-collection-bibtexextra
+  - texlive-collection-langchinese
+  - texlive-collection-langcjk
+  - texlive-collection-latexextra
+  - texlive-collection-pictures
+  - texlive-collection-pstricks
+  - texlive-collection-publishers
+  - texlive-collection-fontsextra
+  - texlive-collection-formatsextra
   # for full curl
   - libcurl
   # there can be cases where aardvark-dns is missing
