@@ -102,6 +102,11 @@ packages:
   # non VF fonts for typst
   - google-noto-serif-cjk-fonts
   - google-noto-sans-cjk-fonts
+  # https://bodhi.fedoraproject.org/updates/FEDORA-2024-8a00986001 breaks the compose
+  # until it is fixed:
+  - gmp
+  - libssh2
+  - mbedtls
 
 exclude-packages:
   - low-memory-monitor
