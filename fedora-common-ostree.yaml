@@ -34,6 +34,9 @@ packages:
   # Keep slirp4netns for rootless containers until it's fully deprecated in podman
   # See: https://github.com/fedora-silverblue/issue-tracker/issues/547
   - slirp4netns
+  # Keep fuse-overlayfs for compatibilty in Fedora 40
+  # See: https://src.fedoraproject.org/rpms/containers-common/c/447945e59a01cb6715ed2a21877d45bf0b91ef67
+  - fuse-overlayfs
   # See: https://github.com/fedora-silverblue/issue-tracker/issues/503
   - systemd-container
   # Provides terminal tools like clear, reset, tput, and tset
