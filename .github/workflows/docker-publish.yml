@@ -41,7 +41,7 @@ jobs:
           mkdir -p repo cache
           ostree init --repo=repo --mode=archive
           rpm-ostree compose image --initialize-mode=if-not-exists \
-            --format registry --layer-repo repo --cachedir=cache \
+            --format registry --layer-repo repo --cachedir=cache --copy-retry-times=4 \
             $composefile \
             $registry/$image:$tag
 
