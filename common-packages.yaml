@@ -182,7 +182,6 @@ packages:
   - whois
   - wireplumber
   - words
-  - wpa_supplicant
   - zip
   - zram-generator-defaults
 packages-x86_64:
