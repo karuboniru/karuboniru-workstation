@@ -108,6 +108,8 @@ packages:
   - gmp
   - libssh2
   - mbedtls
+  # GSConnect wants openssl
+  - openssl
 
 exclude-packages:
   - low-memory-monitor
