@@ -38,6 +38,9 @@ repo-packages:
       - root-smatrix
       - pythia6
       - pythia6-devel
+      # FOR Valor
+      - root-minuit2
+      - root-io-xml
 
 repos:
   - pythia6
