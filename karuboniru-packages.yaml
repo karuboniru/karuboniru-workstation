@@ -110,6 +110,8 @@ packages:
   - mbedtls
   # GSConnect wants openssl
   - openssl
+  # for Valor
+  - gsl-devel
 
 exclude-packages:
   - low-memory-monitor
