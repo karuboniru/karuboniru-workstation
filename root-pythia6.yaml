@@ -41,6 +41,6 @@ repo-packages:
       # FOR Valor
       - root-minuit2
       - root-io-xml
-
+      - root-io-xmlparser
 repos:
   - pythia6
