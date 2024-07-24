@@ -112,7 +112,8 @@ packages:
   - openssl
   # for Valor
   - gsl-devel
-
+  # daily coding 
+  - perf
 exclude-packages:
   - low-memory-monitor
   - passim
