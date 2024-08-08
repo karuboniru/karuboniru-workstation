@@ -119,9 +119,8 @@ exclude-packages:
   - passim
 
 repos:
-  - fedora-40
-  - fedora-40-updates
-  - fedora-40-updates-testing
+  - fedora-41
+  - fedora-41-updates
   - vscode
 
 postprocess:
