@@ -3,7 +3,7 @@ include:
   - howdy.yaml
   - root-pythia6.yaml
   - iwd.yaml
-ref: fedora/40/${basearch}/karuboniru-silverblue
+ref: fedora/41/${basearch}/karuboniru-silverblue
 rojig:
   name: fedora-silverblue
   summary: "Fedora Silverblue base image"
@@ -119,9 +119,9 @@ exclude-packages:
   - passim
 
 repos:
-  - fedora-40
-  - fedora-40-updates
-  - fedora-40-updates-testing
+  - fedora-41
+  - fedora-41-updates
+  - fedora-41-updates-testing
   - vscode
 
 postprocess:
