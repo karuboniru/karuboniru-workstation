@@ -150,6 +150,7 @@ add-files:
       /etc/polkit-1/rules.d/49-nopasswd_global.rules,
     ],
     ["./etc/krb5.conf.d/CC_IN2P3_FR", "/etc/krb5.conf.d/CC_IN2P3_FR"],
+    ["./etc/krb5.conf.d/IHEP_AC_CN", "/etc/krb5.conf.d/IHEP_AC_CN"],
     [
       "./etc/ssh/sshd_config.d/40-nopassword.conf",
       "/etc/ssh/sshd_config.d/40-nopassword.conf",
