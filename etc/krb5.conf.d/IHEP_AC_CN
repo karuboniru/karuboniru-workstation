@@ -1,0 +1,12 @@
+[realms]
+ IHEPKRB5 = {
+  kdc = krb5-02.ihep.ac.cn
+  admin_server = krb5-02.ihep.ac.cn
+  default_domain = IHEPKRB5
+ }
+
+
+[domain_realm]
+ .ihep.ac.cn = IHEPKRB5
+ ihep.ac.cn = IHEPKRB5
+
