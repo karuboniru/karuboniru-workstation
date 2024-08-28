@@ -116,6 +116,8 @@ packages:
   - perf
   # add X session back
   - gnome-session-xsession
+  # lets see
+  - texlive-scheme-medium
 exclude-packages:
   - low-memory-monitor
   - passim
