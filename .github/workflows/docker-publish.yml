@@ -36,13 +36,23 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: ${{ vars.COMPOSEFILE }} 
         run: |
-          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo selinux-policy-targeted
+          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo \
+              selinux-policy-targeted /usr/bin/fuse-overlayfs podman
           skopeo login -u $username -p $password $registry
           mkdir -p repo cache
           ostree init --repo=repo --mode=archive
-          rpm-ostree compose image --initialize-mode=if-not-exists \
-            --format registry --layer-repo repo --cachedir=cache --copy-retry-times=4 \
-            $composefile \
-            $registry/$image:$tag
+          cp /usr/share/containers/storage.conf /etc/containers/storage.conf
+          sed -i 's/#mount_program/mount_program/' /etc/containers/storage.conf
+          rpm-ostree compose tree --unified-core \
+            --repo=repo --cachedir=cache \
+            $composefile
+          rm -rf cache
+          rpm-ostree compose container-encapsulate \
+            --repo=repo --cmd /bin/bash --max-layers 64 \
+             fedora/41/x86_64/karuboniru-silverblue containers-storage:build_tmp
+          podman push --force-compression \
+            --retry 8 \
+            --compression-format zstd:chunked \
+            containers-storage:build_tmp $registry/$image:$tag
 
         
