@@ -114,6 +114,8 @@ packages:
   - gsl-devel
   # daily coding 
   - perf
+  # add X session back
+  - gnome-session-xsession
 exclude-packages:
   - low-memory-monitor
   - passim
