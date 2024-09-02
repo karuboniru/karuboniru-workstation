@@ -49,6 +49,9 @@ packages:
   - gcc
   - gcc-c++
   - gcc-gfortran
+  - llvm
+  - clang
+  - lldb
   - meson
   - gdb
   - xrootd-client
