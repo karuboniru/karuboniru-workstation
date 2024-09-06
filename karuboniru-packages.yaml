@@ -51,6 +51,7 @@ packages:
   - gcc-gfortran
   - llvm
   - clang
+  - lld
   - lldb
   - meson
   - gdb
