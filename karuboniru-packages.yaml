@@ -118,6 +118,7 @@ packages:
   - gsl-devel
   # daily coding 
   - perf
+  - boost-devel
   # add X session back
   - gnome-session-xsession
 exclude-packages:
