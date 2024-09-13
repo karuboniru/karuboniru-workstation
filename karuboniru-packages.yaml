@@ -4,6 +4,7 @@ include:
   - root-pythia6.yaml
   - iwd.yaml
 ref: fedora/41/${basearch}/karuboniru-silverblue
+releasever: 41
 rojig:
   name: fedora-silverblue
   summary: "Fedora Silverblue base image"
@@ -130,6 +131,7 @@ repos:
   - fedora-41-updates
   - fedora-41-updates-testing
   - vscode
+  - llvm-snapshot
 
 postprocess:
   - |
