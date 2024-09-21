@@ -1,10 +1,10 @@
 [llvm-snapshot]
-name=Copr repo for llvm-snapshots-pgo owned by @fedora-llvm-team
-baseurl=https://download.copr.fedorainfracloud.org/results/@fedora-llvm-team/llvm-snapshots-pgo/fedora-41-$basearch/
+name=Copr repo for llvm-snapshots owned by @fedora-llvm-team
+baseurl=https://download.copr.fedorainfracloud.org/results/@fedora-llvm-team/llvm-snapshots/fedora-41-$basearch/
 type=rpm-md
 skip_if_unavailable=True
 gpgcheck=1
-gpgkey=https://download.copr.fedorainfracloud.org/results/@fedora-llvm-team/llvm-snapshots-pgo/pubkey.gpg
+gpgkey=https://download.copr.fedorainfracloud.org/results/@fedora-llvm-team/llvm-snapshots/pubkey.gpg
 repo_gpgcheck=0
 enabled=1
 enabled_metadata=1
