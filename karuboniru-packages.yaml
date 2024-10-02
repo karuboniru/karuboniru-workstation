@@ -123,6 +123,8 @@ packages:
   - boost-devel
   # add X session back
   - gnome-session-xsession
+  # monitor brightness control
+  - ddcutil
 exclude-packages:
   - low-memory-monitor
   - passim
