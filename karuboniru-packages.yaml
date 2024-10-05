@@ -135,6 +135,7 @@ repos:
   - fedora-41-updates-testing
   - vscode
   - llvm-snapshot
+  - llvm-snapshot-rundep
 
 postprocess:
   - |
