@@ -10,12 +10,12 @@ enabled=1
 enabled_metadata=1
 module_hotfixes=1
 
-# [llvm-snapshot-rundep]
-# name=Copr copr.fedorainfracloud.org/@fedora-llvm-team/llvm-snapshots external runtime dependency #1 - https_download_copr_fedorainfracloud_org_results_40fedora_llvm_team_llvm_compat_packages_distname_releasever_basearch
-# baseurl=https://download.copr.fedorainfracloud.org/results/%40fedora-llvm-team/llvm-compat-packages/fedora-$releasever-$basearch
-# type=rpm-md
-# skip_if_unavailable=True
-# repo_gpgcheck=0
-# gpgcheck=0
-# enabled=1
-# enabled_metadata=1
+[llvm-snapshot-rundep]
+name=Copr copr.fedorainfracloud.org/@fedora-llvm-team/llvm-snapshots external runtime dependency #1 - https_download_copr_fedorainfracloud_org_results_40fedora_llvm_team_llvm_compat_packages_distname_releasever_basearch
+baseurl=https://download.copr.fedorainfracloud.org/results/%40fedora-llvm-team/llvm-compat-packages/fedora-41-$basearch
+type=rpm-md
+skip_if_unavailable=True
+repo_gpgcheck=0
+gpgcheck=0
+enabled=1
+enabled_metadata=1
