@@ -51,6 +51,7 @@ packages:
   - gcc-c++
   - gcc-gfortran
   - llvm
+  - mold
   - clang
   - clang-analyzer 
   - lld
