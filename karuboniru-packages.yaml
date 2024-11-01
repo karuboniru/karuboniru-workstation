@@ -126,6 +126,7 @@ packages:
   - gnome-session-xsession
   # monitor brightness control
   - ddcutil
+  - btrbk
 exclude-packages:
   - low-memory-monitor
   - passim
