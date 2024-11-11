@@ -122,14 +122,13 @@ packages:
   # daily coding 
   - perf
   - boost-devel
-  # add X session back
-  - gnome-session-xsession
   # monitor brightness control
   - ddcutil
   - btrbk
 exclude-packages:
   - low-memory-monitor
   - passim
+  - gnome-session-xsession
 
 repos:
   - fedora-41
