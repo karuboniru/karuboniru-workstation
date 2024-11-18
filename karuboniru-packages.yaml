@@ -125,6 +125,7 @@ packages:
   # monitor brightness control
   - ddcutil
   - btrbk
+  - python3-devel
 exclude-packages:
   - low-memory-monitor
   - passim
