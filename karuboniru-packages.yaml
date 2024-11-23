@@ -10,6 +10,9 @@ rojig:
   summary: "Fedora Silverblue base image"
   license: MIT
 
+variables:
+  bootable_container: true
+
 packages:
   - fcitx5
   - fcitx5-autostart
@@ -126,6 +129,9 @@ packages:
   - ddcutil
   - btrbk
   - python3-devel
+  - python3-libdnf5
+  - dnf5
+
 exclude-packages:
   - low-memory-monitor
   - passim
