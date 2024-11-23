@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: 
-      image: fedora:40
+      image: fedora:latest
       options: --privileged
     permissions:
       contents: read
