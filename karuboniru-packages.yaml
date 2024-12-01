@@ -131,6 +131,7 @@ packages:
   - python3-devel
   - python3-libdnf5
   - dnf5
+  - git-lfs
 
 exclude-packages:
   - low-memory-monitor
