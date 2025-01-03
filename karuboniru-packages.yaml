@@ -55,7 +55,8 @@ packages:
   - gcc-gfortran
   - llvm
   - mold
-  - "'clang(major) = 20'"
+  # - "'clang(major) = 20'"
+  - clang
   - clang-analyzer 
   - lld
   - lldb
@@ -143,8 +144,8 @@ repos:
   - fedora-41-updates
   - fedora-41-updates-testing
   - vscode
-  - llvm-snapshot
-  - llvm-snapshot-rundep
+  # - llvm-snapshot
+  # - llvm-snapshot-rundep
 
 postprocess:
   - |
