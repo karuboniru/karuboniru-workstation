@@ -133,6 +133,7 @@ packages:
   - python3-libdnf5
   - dnf5
   - git-lfs
+  - smartmontools
 
 exclude-packages:
   - low-memory-monitor
