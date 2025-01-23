@@ -134,6 +134,8 @@ packages:
   - dnf5
   - git-lfs
   - smartmontools
+  # for biber from upstream texlive
+  - libxcrypt-compat
 
 exclude-packages:
   - low-memory-monitor
