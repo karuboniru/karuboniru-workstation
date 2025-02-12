@@ -38,10 +38,83 @@ repo-packages:
       - root-smatrix
       - pythia6
       - pythia6-devel
-      # FOR Valor
       - root-minuit2
       - root-io-xml
-      - root-io-xmlparser
+      - root-io-xmlparser 
+      - root-cli                              
+      - root-fftw                             
+      - root-foam                             
+      - root-fumili                           
+      - root-gdml                             
+      - root-genetic                          
+      - root-geom-builder                     
+      - root-geom-painter                     
+      - root-geom-webviewer                   
+      - root-graf-gpadv7                      
+      - root-graf-gviz                        
+      - root-graf-primitives                  
+      - root-graf3d-csg                       
+      - root-graf3d-eve                       
+      - root-graf3d-eve7                      
+      - root-graf3d-gl                        
+      - root-graf3d-gviz3d                    
+      - root-graf3d-x3d                       
+      - root-gui-browsable                    
+      - root-gui-browsable-v7                 
+      - root-gui-browserv7                    
+      - root-gui-browserv7-v7                 
+      - root-gui-builder                      
+      - root-gui-canvaspainter                
+      - root-gui-fitpanel                     
+      - root-gui-fitpanelv7                   
+      - root-gui-html                         
+      - root-gui-recorder                     
+      - root-gui-webdisplay                   
+      - root-gui-webgui6                      
+      - root-hist-draw                        
+      - root-hist-factory                     
+      - root-histv7                           
+      - root-html                             
+      - root-io-dcache                        
+      - root-io-sql                           
+      - root-io-xml                           
+      - root-io-xmlparser                     
+      - root-mlp                              
+      - root-montecarlo-pythia8               
+      - root-net-auth                         
+      - root-net-http                         
+      - root-net-httpsniff                    
+      - root-net-rpdutils                     
+      - root-proof                            
+      - root-proof-bench                      
+      - root-proof-player                     
+      - root-proof-sessionviewer              
+      - root-quadp                            
+      - root-roofit                           
+      - root-roofit-batchcompute              
+      - root-roofit-core                      
+      - root-roofit-hs3                       
+      - root-roofit-jsoninterface             
+      - root-roofit-more                      
+      - root-roofit-multiprocess              
+      - root-roostats                         
+      - root-spectrum                         
+      - root-spectrum-painter                 
+      - root-splot                            
+      - root-tmva                             
+      - root-tmva-gui                         
+      - root-tmva-python                      
+      - root-tmva-sofie                       
+      - root-tmva-sofie-parser                
+      - root-tmva-utils                       
+      - root-tpython                          
+      - root-tree-ntuple-utils                
+      - root-tree-viewer                      
+      - root-tree-webviewer                   
+      - root-tutorial                         
+      - root-unfold                           
+      - root-unuran                           
+      - root-xroofit                          
 
 repos:
   - pythia6
