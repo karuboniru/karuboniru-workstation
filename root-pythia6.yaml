@@ -70,7 +70,8 @@ repo-packages:
       - root-gui-html                         
       - root-gui-recorder                     
       - root-gui-webdisplay                   
-      - root-gui-webgui6                      
+      - root-gui-webgui6 
+      - root-gui-qt6webdisplay                     
       - root-hist-draw                        
       - root-hist-factory                     
       - root-histv7                           
