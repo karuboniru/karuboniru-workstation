@@ -136,6 +136,8 @@ packages:
   - smartmontools
   # for biber from upstream texlive
   - libxcrypt-compat
+  # play with krun
+  - krun
 
 exclude-packages:
   - low-memory-monitor
