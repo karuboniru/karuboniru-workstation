@@ -137,7 +137,7 @@ packages:
   # for biber from upstream texlive
   - libxcrypt-compat
   # play with krun
-  - krun
+  - crun-krun
 
 exclude-packages:
   - low-memory-monitor
