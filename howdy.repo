@@ -1,6 +1,6 @@
 [howdy]
 name=Copr repo for howdy-beta owned by principis
-baseurl=https://download.copr.fedorainfracloud.org/results/principis/howdy-beta/fedora-41-$basearch/
+baseurl=https://download.copr.fedorainfracloud.org/results/principis/howdy-beta/fedora-42-$basearch/
 type=rpm-md
 skip_if_unavailable=True
 gpgcheck=1
