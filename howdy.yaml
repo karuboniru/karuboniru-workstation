@@ -1,10 +1,10 @@
 packages:
   - howdy 
-  - howdy-gtk
 
 repos:
   - howdy
   - fedora-42
+  - fedora-41
   - fedora-42-updates
   - rpmfusion-free
   - rpmfusion-free-updates
