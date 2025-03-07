@@ -4,3 +4,10 @@ mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=fedora-42&arch=$basea
 enabled=1
 gpgcheck=1
 metadata_expire=1d
+
+[fedora-41]
+name=Fedora 41 $basearch
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=fedora-41&arch=$basearch
+enabled=1
+gpgcheck=1
+metadata_expire=1d
