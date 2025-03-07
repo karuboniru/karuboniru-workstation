@@ -4,8 +4,8 @@ packages:
 
 repos:
   - howdy
-  - fedora-41
-  - fedora-41-updates
+  - fedora-42
+  - fedora-42-updates
 
 postprocess:
   - |
