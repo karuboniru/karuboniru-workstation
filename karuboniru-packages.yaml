@@ -12,6 +12,7 @@ rojig:
 
 variables:
   bootable_container: true
+  exclude_perl: false
 
 packages:
   - fcitx5
