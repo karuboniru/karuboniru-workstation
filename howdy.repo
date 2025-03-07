@@ -3,8 +3,68 @@ name=Copr repo for howdy-beta owned by principis
 baseurl=https://download.copr.fedorainfracloud.org/results/principis/howdy-beta/fedora-42-$basearch/
 type=rpm-md
 skip_if_unavailable=True
-gpgcheck=1
+gpgcheck=0
 gpgkey=https://download.copr.fedorainfracloud.org/results/principis/howdy-beta/pubkey.gpg
 repo_gpgcheck=0
 enabled=1
 enabled_metadata=1
+
+[rpmfusion-free]
+name=RPM Fusion for Fedora 42 - Free
+#baseurl=http://download1.rpmfusion.org/free/fedora/releases/42/Everything/$basearch/os/
+metalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-42&arch=$basearch
+enabled=1
+#metadata_expire=14d
+type=rpm-md
+gpgcheck=0
+repo_gpgcheck=0
+
+
+[rpmfusion-free-updates]
+name=RPM Fusion for Fedora 42 - Free - Updates
+#baseurl=http://download1.rpmfusion.org/free/fedora/updates/42/$basearch/
+metalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-42&arch=$basearch
+enabled=0
+type=rpm-md
+gpgcheck=0
+repo_gpgcheck=0
+
+
+[rpmfusion-free-updates-testing]
+name=RPM Fusion for Fedora 42 - Free - Test Updates
+#baseurl=http://download1.rpmfusion.org/free/fedora/updates/testing/42/$basearch/
+metalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-testing-42&arch=$basearch
+enabled=1
+type=rpm-md
+gpgcheck=0
+repo_gpgcheck=0
+
+[rpmfusion-nonfree]
+name=RPM Fusion for Fedora 42 - Nonfree
+#baseurl=http://download1.rpmfusion.org/nonfree/fedora/releases/42/Everything/$basearch/os/
+metalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-42&arch=$basearch
+enabled=1
+#metadata_expire=14d
+type=rpm-md
+gpgcheck=0
+repo_gpgcheck=0
+
+
+[rpmfusion-nonfree-updates]
+name=RPM Fusion for Fedora 42 - Nonfree - Updates
+#baseurl=http://download1.rpmfusion.org/nonfree/fedora/updates/42/$basearch/
+metalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-updates-released-42&arch=$basearch
+enabled=0
+type=rpm-md
+gpgcheck=0
+repo_gpgcheck=0
+
+
+[rpmfusion-nonfree-updates-testing]
+name=RPM Fusion for Fedora 42 - Nonfree - Test Updates
+#baseurl=http://download1.rpmfusion.org/nonfree/fedora/updates/testing/42/$basearch/
+metalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-updates-testing-42&arch=$basearch
+enabled=1
+type=rpm-md
+gpgcheck=0
+repo_gpgcheck=0

@@ -6,6 +6,12 @@ repos:
   - howdy
   - fedora-42
   - fedora-42-updates
+  - rpmfusion-free
+  - rpmfusion-free-updates
+  - rpmfusion-free-updates-testing
+  - rpmfusion-nonfree
+  - rpmfusion-nonfree-updates
+  - rpmfusion-nonfree-updates-testing
 
 postprocess:
   - |
