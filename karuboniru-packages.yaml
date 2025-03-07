@@ -1,5 +1,5 @@
 include:
-  - fedora-silverblue.yaml
+  - silverblue.yaml
   - howdy.yaml
   - root-pythia6.yaml
   - iwd.yaml
