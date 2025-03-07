@@ -3,8 +3,8 @@ include:
   - howdy.yaml
   - root-pythia6.yaml
   - iwd.yaml
-ref: fedora/41/${basearch}/karuboniru-silverblue
-releasever: 41
+ref: fedora/42/${basearch}/karuboniru-silverblue
+releasever: 42
 rojig:
   name: fedora-silverblue
   summary: "Fedora Silverblue base image"
@@ -145,9 +145,9 @@ exclude-packages:
   - gnome-session-xsession
 
 repos:
-  - fedora-41
-  - fedora-41-updates
-  - fedora-41-updates-testing
+  - fedora-42
+  - fedora-42-updates
+  - fedora-42-updates-testing
   - vscode
   # - llvm-snapshot
   # - llvm-snapshot-rundep
