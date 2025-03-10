@@ -3,6 +3,7 @@ include:
   - howdy.yaml
   - root-pythia6.yaml
   - iwd.yaml
+  - aptx.yaml
 ref: fedora/41/${basearch}/karuboniru-silverblue
 releasever: 41
 rojig:
