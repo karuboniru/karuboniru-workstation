@@ -150,11 +150,6 @@ exclude-packages:
   - sdubby
   # Exclude Tk. We can not exclude Tcl as it is neeeded for usb_modeswitch
   - tk
-  # Exclude QEMU. See: https://gitlab.com/fedora/ostree/sig/-/issues/58
-  - qemu-kvm
-  - qemu-kvm-core
-  - qemu-device-display-virtio-gpu
-  - qemu-device-display-virtio-vga
   # See: https://github.com/fedora-silverblue/issue-tracker/issues/646
   - hplip-gui
 

@@ -132,6 +132,16 @@ packages:
   - libxcrypt-compat
   # play with krun
   - crun-krun
+  # libvirt
+  - virt-install
+  - libvirt-daemon-config-network
+  - libvirt-daemon-kvm
+  - qemu-kvm
+  - virt-manager
+  - virt-viewer
+  - libguestfs-tools
+  - python3-libguestfs
+  - virt-top
 
 exclude-packages:
   - low-memory-monitor
