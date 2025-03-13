@@ -134,6 +134,7 @@ packages:
   - crun-krun
   # libvirt
   - virt-install
+  - libvirt-dbus
   - libvirt-daemon-config-network
   - libvirt-daemon-kvm
   - qemu-kvm
