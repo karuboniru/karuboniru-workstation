@@ -51,8 +51,6 @@ packages:
   - ptyxis
   - rygel
   - systemd-oomd-defaults
-  - tracker
-  - tracker-miners
   - xdg-desktop-portal
   - xdg-desktop-portal-gnome
   - xdg-desktop-portal-gtk
