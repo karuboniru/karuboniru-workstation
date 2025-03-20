@@ -143,6 +143,8 @@ packages:
   - libguestfs-tools
   - python3-libguestfs
   - virt-top
+  - tinysparql
+  - localsearch
 
 exclude-packages:
   - low-memory-monitor
