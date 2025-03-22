@@ -1,0 +1,11 @@
+packages:
+  - pipewire-codec-aptx 
+
+repos:
+  - rpmfusion-free
+  - rpmfusion-free-updates
+  - rpmfusion-free-updates-testing
+  - rpmfusion-nonfree
+  - rpmfusion-nonfree-updates
+  - rpmfusion-nonfree-updates-testing
+  
