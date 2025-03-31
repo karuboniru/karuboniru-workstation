@@ -146,6 +146,7 @@ packages:
   - virt-top
   - tinysparql
   - localsearch
+  - sedutil
 
 exclude-packages:
   - low-memory-monitor
