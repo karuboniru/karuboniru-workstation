@@ -1,6 +1,6 @@
 include:
   - silverblue.yaml
-  # - howdy.yaml
+  - howdy.yaml
   - root-pythia6.yaml
   - iwd.yaml
   - aptx.yaml
