@@ -147,6 +147,7 @@ packages:
   - tinysparql
   - localsearch
   - sedutil
+  - iperf3
 
 exclude-packages:
   - low-memory-monitor
