@@ -153,6 +153,7 @@ exclude-packages:
   - low-memory-monitor
   - passim
   - gnome-session-xsession
+  - hplip-gui
 
 repos:
   - fedora-42
