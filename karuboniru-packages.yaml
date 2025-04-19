@@ -149,6 +149,12 @@ packages:
   - sedutil
   - iperf3
 
+  - libibverbs 
+  - libibverbs-utils 
+  - infiniband-diags
+  - rdma-core
+  
+
 exclude-packages:
   - low-memory-monitor
   - passim
