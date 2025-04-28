@@ -153,6 +153,7 @@ packages:
   - libibverbs-utils 
   - infiniband-diags
   - rdma-core
+  - mstflint
   
 
 exclude-packages:
