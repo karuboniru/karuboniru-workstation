@@ -154,6 +154,7 @@ packages:
   - infiniband-diags
   - rdma-core
   - mstflint
+  - qperf
   
 
 exclude-packages:
