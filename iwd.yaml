@@ -5,7 +5,3 @@ postprocess:
   - |
     set -xeuo pipefail
     echo -e '[device]\nwifi.backend=iwd' > /usr/lib/NetworkManager/conf.d/23-wifi_backend.conf
-
-exclude-packages:
-  - wpa_supplicant
-
