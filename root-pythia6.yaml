@@ -72,9 +72,7 @@ repo-packages:
       - root-gui-webdisplay                   
       - root-gui-webgui6 
       - root-gui-qt6webdisplay                     
-      - root-hist-draw                        
       - root-hist-factory                     
-      - root-histv7                           
       - root-html                             
       - root-io-dcache                        
       - root-io-sql                           
