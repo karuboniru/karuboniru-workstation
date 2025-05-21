@@ -1,0 +1,31 @@
+[nvidia]
+name=RPM Fusion for Fedora $releasever - Nonfree - NVIDIA Driver
+#baseurl=http://download1.rpmfusion.org/nonfree/fedora/nvidia-driver/$releasever/$basearch/
+metalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-nvidia-driver-rawhide&arch=$basearch
+enabled=1
+type=rpm-md
+gpgcheck=0
+repo_gpgcheck=0
+skip_if_unavailable=True
+module_hotfixes=True
+
+[nvidia-user]
+name=Copr repo for nvidia-driver-rawhide owned by kwizart
+baseurl=https://download.copr.fedorainfracloud.org/results/kwizart/nvidia-driver-rawhide/fedora-42-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/kwizart/nvidia-driver-rawhide/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+module_hotfixes=1
+cost=1
+exclude=fake-grubby
+
+[cudnn]
+name=cuda-rhel9-x86_64
+baseurl=file://./download
+enabled=1
+gpgcheck=0
+cost=2000
