@@ -1,0 +1,52 @@
+repos:
+  - nvidia
+  - dummy
+  - nvidia-user
+  - ctk
+
+packages:
+  - nvidia-container-toolkit
+  - nvidia-container-toolkit-selinux
+  - nvidia-modprobe
+  - xorg-x11-drv-nvidia-libs
+  - nvidia-persistenced
+  - xorg-x11-drv-nvidia
+  - xorg-x11-drv-nvidia-xorg-libs
+  - xorg-x11-drv-nvidia-cuda
+  - xorg-x11-drv-nvidia-power
+  - xorg-x11-drv-nvidia-kmodsrc
+  - xorg-x11-drv-nvidia-cuda-libs
+  - nvidia-settings
+  - kernel-devel
+  - dummy
+
+exclude-packages:
+  - akmods
+  - akmod-nvidia
+
+postprocess:
+  - |
+    kmodsrc=$(realpath /usr/share/nvidia-kmod-*/*.tar.xz)
+    if [ -f $kmodsrc ]; then
+      kmodule_path=$(realpath /lib/modules/*)
+      # disable warnings during build
+      kernel_uname=$(basename $kmodule_path)
+      mkdir -p /tmp/kmod-build
+      tar -xvf $kmodsrc -C /tmp/kmod-build
+      # try with kernel-open first
+      # if it fails, try with kernel
+      (cd /tmp/kmod-build/kernel-open && \
+      make -O V=1 VERBOSE=1 CC='gcc -O2 -std=gnu17' \
+              LD=ld.bfd KERNEL_UNAME=${kernel_uname} \
+              modules -j$(nproc) && \
+      make -O V=1 VERBOSE=1 CC='gcc -O2 -std=gnu17' \
+              LD=ld.bfd KERNEL_UNAME=${kernel_uname} \
+              modules_install) || \
+      (cd /tmp/kmod-build/kernel && \
+      make -O V=1 VERBOSE=1 CC='gcc -O2 -std=gnu17' \
+              LD=ld.bfd KERNEL_UNAME=${kernel_uname} \
+              modules -j$(nproc) && \
+      make -O V=1 VERBOSE=1 CC='gcc -O2 -std=gnu17' \
+              LD=ld.bfd KERNEL_UNAME=${kernel_uname} \
+              modules_install) || exit 1
+    fi

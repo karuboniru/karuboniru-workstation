@@ -4,6 +4,7 @@ include:
   - root-pythia6.yaml
   - iwd.yaml
   - aptx.yaml
+  - nvidia.yaml
 ref: fedora/42/${basearch}/karuboniru-silverblue
 releasever: 42
 rojig:
