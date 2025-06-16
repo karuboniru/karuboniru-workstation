@@ -60,7 +60,7 @@ packages:
   - mold
   # - "'clang(major) = 20'"
   - clang
-  - clang-analyzer 
+  - clang-analyzer
   - lld
   - lldb
   - meson
@@ -119,7 +119,7 @@ packages:
   - openssl
   # for Valor
   - gsl-devel
-  # daily coding 
+  # daily coding
   - perf
   - boost-devel
   # monitor brightness control
@@ -150,8 +150,8 @@ packages:
   - sedutil
   - iperf3
 
-  - libibverbs 
-  - libibverbs-utils 
+  - libibverbs
+  - libibverbs-utils
   - infiniband-diags
   - rdma-core
   - mstflint
