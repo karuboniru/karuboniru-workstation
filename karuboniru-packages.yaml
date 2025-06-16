@@ -157,7 +157,13 @@ packages:
   - mstflint
   - qperf
   - perftest
-  
+
+  # Evince PDF viewer
+  - evince
+  - evince-djvu
+  - evince-dvi
+  - evince-previewer
+  - evince-thumbnailer
 
 exclude-packages:
   - low-memory-monitor
