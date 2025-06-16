@@ -161,7 +161,6 @@ packages:
   # Evince PDF viewer
   - evince
   - evince-djvu
-  - evince-dvi
   - evince-previewer
   - evince-thumbnailer
 
