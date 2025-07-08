@@ -164,6 +164,8 @@ packages:
   - evince-previewer
   - evince-thumbnailer
 
+  - zig
+
 exclude-packages:
   - low-memory-monitor
   - passim
