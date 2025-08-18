@@ -164,6 +164,8 @@ packages:
   - evince-previewer
   - evince-thumbnailer
 
+  - gh
+
   - zig
 
   - krunvm
