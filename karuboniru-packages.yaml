@@ -164,6 +164,7 @@ packages:
   - evince-previewer
   - evince-thumbnailer
 
+  - seahorse
   - gh
 
   - zig
