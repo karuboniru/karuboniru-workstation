@@ -164,6 +164,9 @@ packages:
   - evince-previewer
   - evince-thumbnailer
 
+  # VOMS and Xrootd
+  - xrootd-voms xrootd-client voms-clients-cpp
+
   - seahorse
   - gh
 
