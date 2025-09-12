@@ -1,12 +1,12 @@
 include:
   - silverblue.yaml
-  - howdy.yaml
+  # - howdy.yaml
   - root-pythia6.yaml
   # - iwd.yaml
   - aptx.yaml
   # - nvidia.yaml
-ref: fedora/42/${basearch}/karuboniru-silverblue
-releasever: 42
+ref: fedora/43/${basearch}/karuboniru-silverblue
+releasever: 43
 rojig:
   name: fedora-silverblue
   summary: "Fedora Silverblue base image"
@@ -181,9 +181,9 @@ exclude-packages:
   - hplip-gui
 
 repos:
-  - fedora-42
-  - fedora-42-updates
-  - fedora-42-updates-testing
+  - fedora-43
+  - fedora-43-updates
+  - fedora-43-updates-testing
   - vscode
   # - llvm-snapshot
   # - llvm-snapshot-rundep

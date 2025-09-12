@@ -71,7 +71,6 @@ packages:
   - root-gui-webgui6
   - root-gui-qt6webdisplay
   - root-hist-factory
-  - root-html
   - root-io-dcache
   - root-io-sql
   - root-io-xml

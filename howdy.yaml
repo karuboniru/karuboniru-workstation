@@ -1,17 +1,17 @@
 packages:
-  - howdy 
+  - howdy
 
 repos:
   - howdy
-  - fedora-42
-  - fedora-42-updates
+  - fedora-43
+  - fedora-43-updates
   - dummy
-  
+
 postprocess:
   - |
     #!/bin/bash
     set -xeuo pipefail
-    cat <<EOF > /tmp/howdy.te 
+    cat <<EOF > /tmp/howdy.te
     module howdy 1.0;
 
     require {
@@ -33,4 +33,3 @@ postprocess:
     sed -i '1i auth        sufficient      pam_howdy.so' /etc/pam.d/{password-auth,system-auth}
     # workaround for canceling authentication in sudo/polkit
     # sed -i '1i auth sufficient pam_unix.so try_first_pass likeauth nullok' /etc/pam.d/system-auth
-

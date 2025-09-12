@@ -1,6 +1,6 @@
 [pythia6]
 name=Pythia6 packages
-baseurl=https://download.copr.fedorainfracloud.org/results/yanqiyu/pythia6/fedora-42-$basearch/
+baseurl=https://download.copr.fedorainfracloud.org/results/yanqiyu/pythia6/fedora-43-$basearch/
 type=rpm-md
 skip_if_unavailable=True
 gpgcheck=1
