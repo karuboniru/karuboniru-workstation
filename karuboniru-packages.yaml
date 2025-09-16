@@ -31,7 +31,7 @@ packages:
   - bootc
   # GENIE & NuWro build dependencies
   - libxml2-devel
-  # - pythia6-devel
+  - pythia8-devel
   - log4cpp-devel
   - libnsl2-devel
   - lhapdf-devel
