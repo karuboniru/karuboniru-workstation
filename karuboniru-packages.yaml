@@ -168,6 +168,14 @@ packages:
   - xrootd-voms xrootd-client voms-clients-cpp
 
   - seahorse
+  - gnupg2-scdaemon
+  - p11-kit-client
+  - ykclient
+  - ykpers
+  - yubico-piv-tool-devel
+  - yubikey-manager
+  - yubikey-manager-qt
+  - yubikey-personalization-gui
   - gh
 
   - zig
