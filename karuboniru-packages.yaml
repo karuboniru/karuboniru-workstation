@@ -2,7 +2,7 @@ include:
   - silverblue.yaml
   # - howdy.yaml
   - root-pythia6.yaml
-  # - iwd.yaml
+  - iwd.yaml
   - aptx.yaml
   # - nvidia.yaml
 ref: fedora/43/${basearch}/karuboniru-silverblue
