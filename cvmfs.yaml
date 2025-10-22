@@ -1,0 +1,6 @@
+packages:
+  - cvmfs cvmfs-fuse3
+
+repos:
+  - cernvm
+  - cernvm-config
