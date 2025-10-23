@@ -7,6 +7,5 @@ repos:
 postprocess:
   - |
     #!/usr/bin/env bash
-    set -euo pipefail
-    ln -s run/cvmfs /cvmfs
-    echo 'd /run/cvmfs 0755 root root -' >> /usr/lib/tmpfiles.d/cvmfs.conf
+    echo 'd /cvmfs 0755 root root -' >> /usr/lib/tmpfiles.d/cvmfs.conf
+    echo -e '[root]\ntransient = true' >> /usr/lib/ostree/prepare-root.conf
