@@ -30,7 +30,7 @@ polkitd:x:998:
 etcd:x:997:
 dip:x:40:
 cgred:x:996:
-tss:x:59:
+tss:x:59:clevis
 avahi-autoipd:x:170:
 rpc:x:32:
 sssd:x:993:
@@ -77,3 +77,11 @@ gnome-remote-desktop:x:968:
 systemd-coredump:x:967:
 systemd-oom:x:966:
 qemu:x:107:
+libvirt:x:965:
+qat:x:964:
+clock:x:103:
+clevis:x:963:
+dhcpcd:x:962:
+gluster:x:961:
+libvirtdbus:x:960:
+cvmfs:x:959:
