@@ -5,6 +5,7 @@ include:
   - iwd.yaml
   - aptx.yaml
   - cvmfs.yaml
+  - latex.yaml
   # - nvidia.yaml
 ref: fedora/43/${basearch}/karuboniru-silverblue
 releasever: 43
