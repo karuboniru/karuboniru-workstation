@@ -4,11 +4,15 @@ packages:
   - texlive-base
   - texlive-collection-basic
   - texlive-collection-binextra
+  - texlive-collection-bibtexextra
   - texlive-collection-context
+  - texlive-collection-fontsextra
   - texlive-collection-fontsrecommended
   - texlive-collection-fontutils
   - texlive-collection-langenglish
   - texlive-collection-langeuropean
+  - texlive-collection-langchinese
+  - texlive-collection-langcjk
   - texlive-collection-latex
   - texlive-collection-latexrecommended
   - texlive-collection-luatex
@@ -16,7 +20,8 @@ packages:
   - texlive-collection-plaingeneric
   - texlive-collection-texworks
   - texlive-collection-xetex
-  - texlive-collection-langchinese
+  - texlive-collection-pictures
+  - texlive-collection-publishers
 
   # texlive-collection-mathscience being explcitly excluded to
   # exclude texlive-includernw which I don't need (and pulls in tk)

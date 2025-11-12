@@ -192,6 +192,7 @@ repos:
   - fedora-43-updates
   - fedora-43-updates-testing
   - vscode
+  - dummy
   # - llvm-snapshot
   # - llvm-snapshot-rundep
 
