@@ -5,6 +5,7 @@ include:
   - iwd.yaml
   - aptx.yaml
   - cvmfs.yaml
+  - evtgen.yaml
   # - latex.yaml
   # - nvidia.yaml
 ref: fedora/43/${basearch}/karuboniru-silverblue
@@ -181,9 +182,7 @@ packages:
 
   - krunvm
 
-  - HepMC3-rootIO-devel
-  - HepMC3-devel
-  - HepMC3-search-devel
+  - uv
 
 exclude-packages:
   - low-memory-monitor
