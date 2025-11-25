@@ -181,6 +181,10 @@ packages:
 
   - krunvm
 
+  - HepMC3-rootIO-devel
+  - HepMC3-devel
+  - HepMC3-search-devel
+
 exclude-packages:
   - low-memory-monitor
   - passim
