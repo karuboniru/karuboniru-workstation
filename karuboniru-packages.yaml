@@ -184,6 +184,10 @@ packages:
 
   - uv
 
+  # kmscon
+  - kmscon
+  - kmscon-gl
+
 exclude-packages:
   - low-memory-monitor
   - passim
@@ -204,6 +208,7 @@ postprocess:
     systemctl enable sshd.socket
     systemctl enable rpm-ostreed-automatic.timer
     rm /etc/grub.d/30_os-prober
+    sudo ln -s /usr/lib/systemd/system/kmsconvt@.service /etc/systemd/system/autovt@.service
 
 add-files:
   [
