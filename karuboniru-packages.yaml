@@ -188,6 +188,8 @@ packages:
   - kmscon
   - kmscon-gl
 
+  - gnome-boxes
+
 exclude-packages:
   - low-memory-monitor
   - passim
