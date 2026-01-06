@@ -181,6 +181,7 @@ packages:
   - zig
 
   - krunvm
+  - muvm
 
   - uv
 
