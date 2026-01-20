@@ -1,10 +1,10 @@
 [pythia6]
-name=Pythia6 packages
-baseurl=https://download.copr.fedorainfracloud.org/results/yanqiyu/pythia6/fedora-43-$basearch/
+name=Copr repo for egpythia6 owned by yanqiyu
+baseurl=https://download.copr.fedorainfracloud.org/results/yanqiyu/egpythia6/fedora-$releasever-$basearch/
 type=rpm-md
 skip_if_unavailable=True
 gpgcheck=1
-gpgkey=https://download.copr.fedorainfracloud.org/results/yanqiyu/pythia6/pubkey.gpg
+gpgkey=https://download.copr.fedorainfracloud.org/results/yanqiyu/egpythia6/pubkey.gpg
 repo_gpgcheck=0
 enabled=1
 enabled_metadata=1

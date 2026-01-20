@@ -203,6 +203,7 @@ repos:
   - fedora-43-updates-testing
   - vscode
   - dummy
+  - pythia6
   # - llvm-snapshot
   # - llvm-snapshot-rundep
 

@@ -28,14 +28,11 @@ packages:
   - root-core
   - root-cling
   - root-montecarlo-eg
-  # - root-montecarlo-pythia6
   - root
   - root-genvector
   - root-geom
   - root-netx
   - root-smatrix
-  # - pythia6
-  # - pythia6-devel
   - root-minuit2
   - root-io-xml
   - root-io-xmlparser
@@ -111,3 +108,6 @@ packages:
   - root-unfold
   - root-unuran
   - root-xroofit
+  - egpythia6-standalone
+  - pythia6
+  - pythia6-devel
