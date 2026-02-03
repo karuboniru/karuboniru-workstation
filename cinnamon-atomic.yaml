@@ -5,7 +5,7 @@ include:
   - common.yaml
   - cinnamon-atomic-packages.yaml
 
-ref: fedora/43/${basearch}/cinnamon
+ref: fedora/44/${basearch}/cinnamon
 rojig:
   name: fedora-cinnamon
   summary: "Fedora Cinnamon Atomic"
@@ -19,5 +19,5 @@ packages:
 
 # Kept in the leaf manifest as they are overwritten by Pungi in composes
 repos:
-  - fedora-43
-  - fedora-43-updates
+  - fedora
+  - fedora-updates

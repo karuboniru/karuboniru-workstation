@@ -11,7 +11,7 @@ module_hotfixes=True
 
 [nvidia-user]
 name=Copr repo for nvidia-driver-rawhide owned by kwizart
-baseurl=https://download.copr.fedorainfracloud.org/results/kwizart/nvidia-driver-rawhide/fedora-43-$basearch/
+baseurl=https://download.copr.fedorainfracloud.org/results/kwizart/nvidia-driver-rawhide/fedora-$releasever-$basearch/
 type=rpm-md
 skip_if_unavailable=True
 gpgcheck=1

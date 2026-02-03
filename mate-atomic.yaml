@@ -5,7 +5,7 @@ include:
   - common.yaml
   - mate-atomic-packages.yaml
 
-ref: fedora/43/${basearch}/mate
+ref: fedora/44/${basearch}/mate
 rojig:
   name: fedora-mate
   summary: "Fedora Mate Atomic"
@@ -22,5 +22,5 @@ exclude-packages:
 
 # Kept in the leaf manifest as they are overwritten by Pungi in composes
 repos:
-  - fedora-43
-  - fedora-43-updates
+  - fedora
+  - fedora-updates

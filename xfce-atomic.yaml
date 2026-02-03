@@ -6,7 +6,7 @@ include:
   - common.yaml
   - xfce-atomic-packages.yaml
 
-ref: fedora/43/${basearch}/vauxite
+ref: fedora/44/${basearch}/vauxite
 rojig:
   name: fedora-vauxite
   summary: "Fedora XFCE Atomic"
@@ -21,5 +21,5 @@ packages:
 
 # Kept in the leaf manifest as they are overwritten by Pungi in composes
 repos:
-  - fedora-43
-  - fedora-43-updates
+  - fedora
+  - fedora-updates

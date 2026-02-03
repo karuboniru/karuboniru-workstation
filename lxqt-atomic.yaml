@@ -6,7 +6,7 @@ include:
   - common.yaml
   - lxqt-atomic-packages.yaml
 
-ref: fedora/43/${basearch}/lazurite
+ref: fedora/44/${basearch}/lazurite
 rojig:
   name: fedora-lxqt
   summary: "Fedora LXQt Atomic"
@@ -25,5 +25,5 @@ packages:
 
 # Kept in the leaf manifest as they are overwritten by Pungi in composes
 repos:
-  - fedora-43
-  - fedora-43-updates
+  - fedora
+  - fedora-updates

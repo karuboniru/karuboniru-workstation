@@ -5,7 +5,7 @@ include:
   - common.yaml
   - cosmic-atomic-packages.yaml
 
-ref: fedora/43/${basearch}/cosmic-atomic
+ref: fedora/44/${basearch}/cosmic-atomic
 rojig:
   name: fedora-cosmic
   summary: "Fedora COSMIC Atomic"

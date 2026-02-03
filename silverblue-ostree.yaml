@@ -6,5 +6,5 @@ include:
 
 # Kept in the leaf manifest as they are overwritten by Pungi in composes
 repos:
-  - fedora-43
-  - fedora-43-updates
+  - fedora
+  - fedora-updates

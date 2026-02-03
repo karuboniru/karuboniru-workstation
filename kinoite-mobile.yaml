@@ -5,7 +5,7 @@ include:
   - kinoite-common.yaml
 
 # Override the default Kinoite ref from the kinoite-common.yaml manifest
-ref: fedora/43/${basearch}/kinoite-mobile
+ref: fedora/44/${basearch}/kinoite-mobile
 rojig:
   name: fedora-kde
   summary: "Fedora Kinoite Mobile"
@@ -13,5 +13,5 @@ rojig:
 
 # Kept in the leaf manifest as they are overwritten by Pungi in composes
 repos:
-  - fedora-43
-  - fedora-43-updates
+  - fedora
+  - fedora-updates
