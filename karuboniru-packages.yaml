@@ -200,7 +200,7 @@ exclude-packages:
 repos:
   - fedora
   - fedora-updates
-  - fedora-updates-testing
+  # - fedora-updates-testing
   - vscode
   - dummy
   - pythia6
