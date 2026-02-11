@@ -3,7 +3,7 @@ include:
   # - howdy.yaml
   - root-pythia6.yaml
   # - iwd.yaml
-  - aptx.yaml
+  # - aptx.yaml
   - cvmfs.yaml
   - evtgen.yaml
   # - latex.yaml
