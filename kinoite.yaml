@@ -1,7 +1,0 @@
-include:
-  - kinoite-common.yaml
-
-# Kept in the leaf manifest as they are overwritten by Pungi in composes
-repos:
-  - fedora
-  - fedora-updates
