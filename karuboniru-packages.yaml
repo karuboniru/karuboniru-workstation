@@ -1,13 +1,13 @@
 include:
-  - silverblue.yaml
-  # - howdy.yaml
-  - root-pythia6.yaml
-  # - iwd.yaml
-  # - aptx.yaml
-  - cvmfs.yaml
-  - evtgen.yaml
-  # - latex.yaml
-  # - nvidia.yaml
+  - manifests/base/silverblue.yaml
+  - manifests/features/root-pythia6.yaml
+  - manifests/features/cvmfs.yaml
+  - manifests/features/evtgen.yaml
+  # - manifests/features/howdy.yaml
+  # - manifests/features/iwd.yaml
+  # - manifests/features/aptx.yaml
+  # - manifests/features/latex.yaml
+  # - manifests/features/nvidia.yaml
 ref: fedora/44/${basearch}/karuboniru-silverblue
 releasever: 44
 rojig:
@@ -20,6 +20,7 @@ variables:
   exclude_perl: false
 
 packages:
+  # Input method / CJK support
   - fcitx5
   - fcitx5-autostart
   - fcitx5-chinese-addons
@@ -27,117 +28,93 @@ packages:
   - fcitx5-gtk
   - fcitx5-mozc
   - fcitx5-qt
+
+  # Shell & system utilities
   - zsh
   - htop
   - wireguard-tools
-  - systemd-container
-  - bootc
-  # GENIE & NuWro build dependencies
+  - git-lfs
+  - btrbk
+  - smartmontools
+  - ddcutil
+  - sedutil
+  - iperf3
+
+  # Fedora packaging tools
+  - koji
+  - fedpkg
+  - copr-cli
+
+  # Compilers & build tools
+  - gcc
+  - gcc-c++
+  - gcc-gfortran
+  - clang
+  - clang-analyzer
+  - clang-tools-extra
+  - llvm
+  - lld
+  - lldb
+  - mold
+  - cmake
+  - meson
+  - ninja-build
+  - gdb
+  - bear
+  - patch
+  - libasan
+
+  # Development libraries
+  - /usr/include/eigen3
+  - json-devel
+  - gsl-devel
+  - boost-devel
+  - liburing-devel
+  - python3-devel
+  - python3-libdnf5
+
+  # Profiling & analysis
+  - perf
+  - valgrind
+  - strace
+  - binwalk
+
+  # HEP / physics build dependencies (GENIE, NuWro, GiBUU)
   - libxml2-devel
   - pythia8-devel
   - log4cpp-devel
   - libnsl2-devel
   - lhapdf-devel
-  # GiBUU
   - /usr/lib64/libbz2.so
-  # Fedora
-  - koji
-  - fedpkg
-  - copr-cli
-  # General building tools
-  - libasan
-  - binwalk
-  - valgrind
-  - /usr/include/eigen3
-  - json-devel
-  - strace
-  - clang-tools-extra
-  - bear
-  - patch
-  - ninja-build
-  - cmake
-  - gcc
-  - gcc-c++
-  - gcc-gfortran
-  - llvm
-  - mold
-  # - "'clang(major) = 20'"
-  - clang
-  - clang-analyzer
-  - lld
-  - lldb
-  - meson
-  - gdb
+
+  # HEP data access (XRootD, VOMS)
   - xrootd-client
   - xrootd-voms
+  - voms-clients-cpp
   - rclone
-  # vscode
-  - code
-  # for running TexLive
-  - "perl(Cwd)"
-  - "perl(Digest::MD5)"
-  - "perl(Encode)"
-  - "perl(File::Basename)"
-  - "perl(File::Copy)"
-  - "perl(File::Find)"
-  - "perl(File::Path)"
-  - "perl(File::Spec::Functions)"
-  - "perl(FileHandle)"
-  - "perl(List::Util)"
-  - "perl(Time::HiRes)"
-  - "perl(Unicode::Normalize)"
-  - "perl(sigtrap)"
-  - "perl(vars)"
-  - "perl(File::Find)"
-  - "perl(File::Temp)"
-  - "perl(File::Spec)"
-  - "perl(Data::Dumper)"
-  - "perl(File::HomeDir)"
-  - "perl(FindBin)"
-  - "perl(Getopt::Long)"
-  - "perl(Text::Tabs)"
-  - "perl(Text::Wrap)"
-  - "perl(YAML::Tiny)"
-  - "perl(lib)"
-  - "perl(open)"
-  # for full curl
-  - libcurl
-  # there can be cases where aardvark-dns is missing
-  - aardvark-dns
-  # for linking against liburing
-  - liburing-devel
-  # tpm2 protected ssh key
+
+  # InfiniBand / RDMA
+  - libibverbs
+  - libibverbs-utils
+  - infiniband-diags
+  - rdma-core
+  - mstflint
+  - qperf
+  - perftest
+
+  # Security / authentication
   - tpm2-pkcs11
   - tpm2-pkcs11-tools
   - tpm2-tools
-  # non VF fonts for typst
-  - google-noto-serif-cjk-fonts
-  - google-noto-sans-cjk-fonts
-  # https://bodhi.fedoraproject.org/updates/FEDORA-2024-8a00986001 breaks the compose
-  # until it is fixed:
-  - gmp
-  - libssh2
-  - mbedtls
-  # GSConnect wants openssl
+  - seahorse
+  - gnupg2-scdaemon
+  - p11-kit-client
+  - ykclient
+  - ykpers
+  - yubikey-manager
   - openssl
-  # for Valor
-  - gsl-devel
-  # daily coding
-  - perf
-  - boost-devel
-  # monitor brightness control
-  - ddcutil
-  - btrbk
-  - python3-devel
-  - python3-libdnf5
-  - dnf5
-  - git-lfs
-  - smartmontools
-  # for biber from upstream texlive
-  - libxcrypt-compat
-  # play with krun
-  - crun-krun
-  # libvirt
+
+  # Virtualization & containers
   - virt-install
   - libvirt-dbus
   - libvirt-daemon-config-network
@@ -148,48 +125,61 @@ packages:
   - libguestfs-tools
   - python3-libguestfs
   - virt-top
-  - tinysparql
-  - localsearch
-  - sedutil
-  - iperf3
-
-  - libibverbs
-  - libibverbs-utils
-  - infiniband-diags
-  - rdma-core
-  - mstflint
-  - qperf
-  - perftest
-
-  # Evince PDF viewer
-  - evince
-  - evince-djvu
-  - evince-previewer
-  - evince-thumbnailer
-
-  # VOMS and Xrootd
-  - xrootd-voms xrootd-client voms-clients-cpp
-
-  - seahorse
-  - gnupg2-scdaemon
-  - p11-kit-client
-  - ykclient
-  - ykpers
-  - yubikey-manager
-  - gh
-
-  - zig
-
+  - gnome-boxes
+  - crun-krun
   - krunvm
   - muvm
 
+  # Developer tools & editors
+  - code
+  - gh
+  - zig
   - uv
 
-  # kmscon
+  # Desktop utilities
+  - evince
+  - evince-djvu
   - kmscon
   - kmscon-gl
 
-  - gnome-boxes
+  # CJK fonts (for typst)
+  - google-noto-serif-cjk-fonts
+  - google-noto-sans-cjk-fonts
+
+  # Perl modules (for TexLive utilities)
+  - "perl(Cwd)"
+  - "perl(Data::Dumper)"
+  - "perl(Digest::MD5)"
+  - "perl(Encode)"
+  - "perl(File::Basename)"
+  - "perl(File::Copy)"
+  - "perl(File::Find)"
+  - "perl(File::HomeDir)"
+  - "perl(File::Path)"
+  - "perl(File::Spec)"
+  - "perl(File::Spec::Functions)"
+  - "perl(File::Temp)"
+  - "perl(FileHandle)"
+  - "perl(FindBin)"
+  - "perl(Getopt::Long)"
+  - "perl(List::Util)"
+  - "perl(Text::Tabs)"
+  - "perl(Text::Wrap)"
+  - "perl(Time::HiRes)"
+  - "perl(Unicode::Normalize)"
+  - "perl(YAML::Tiny)"
+  - "perl(lib)"
+  - "perl(open)"
+  - "perl(sigtrap)"
+  - "perl(vars)"
+
+  # System libraries & compatibility
+  - libcurl
+  - aardvark-dns
+  - gmp
+  - libssh2
+  - mbedtls
+  - libxcrypt-compat
 
 exclude-packages:
   - low-memory-monitor

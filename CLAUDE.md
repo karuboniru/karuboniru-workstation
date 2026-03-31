@@ -28,22 +28,32 @@ podman unshare -- rpm-ostree compose tree --repo repo --cachedir=cache --unified
 
 Otherwise, builds happen in CI or require a privileged environment with `rpm-ostree` and `skopeo`.
 
-## Manifest structure
+## Repository structure
 
-`karuboniru-packages.yaml` is the root treefile. It uses rpm-ostree's `include:` key to compose layers:
+```
+karuboniru-packages.yaml   # root treefile — the only file to edit for personal packages
+*.repo                     # DNF repo definitions (all at root, same level as root treefile)
+etc/                       # config files embedded into image via add-files
+manifests/
+  base/                    # upstream Fedora Silverblue stack (silverblue.yaml, common.yaml, etc.)
+  features/                # optional feature yamls (cvmfs, evtgen, root-pythia6, howdy, nvidia, …)
+```
 
-- `silverblue.yaml` → `silverblue-common.yaml` → `common.yaml` (base Fedora Silverblue stack)
-- `common.yaml` includes modular yamls: `common-packages.yaml`, `bootupd.yaml`, `initramfs.yaml`, `sysroot-ro.yaml`, `kernel-install.yaml`, `composefs.yaml`, `bootc.yaml`, `dnf5.yaml`
-- `silverblue-packages.yaml` is auto-generated from Fedora Comps (do not edit manually — see header comment)
-- Additional feature yamls included in `karuboniru-packages.yaml`: `root-pythia6.yaml`, `cvmfs.yaml`, `evtgen.yaml`
+## Manifest include chain
 
-Each `.repo` file in the root is a DNF repository definition used during compose. Active repos in `karuboniru-packages.yaml`: `fedora`, `fedora-updates`, `fedora-updates-testing`, `vscode`, `dummy`, `pythia6`.
+`karuboniru-packages.yaml` → `manifests/base/silverblue.yaml` → `manifests/base/silverblue-common.yaml` → `manifests/base/common.yaml`
+
+`common.yaml` conditionally includes `bootc.yaml` + `dnf5.yaml` (when `bootable_container == true`) and pulls in the other small component yamls (`bootupd`, `initramfs`, `composefs`, etc.). All files within `manifests/base/` include each other by relative filename.
+
+`manifests/base/silverblue-packages.yaml` is auto-generated from Fedora Comps — do not edit manually (see header comment).
+
+Feature yamls (`manifests/features/*.yaml`) are self-contained: each bundles its packages, any required repos (referenced by name, resolved from root), and postprocess scripts.
 
 ## Key files to edit
 
-- **`karuboniru-packages.yaml`**: The only file to edit for package additions/removals, repo changes, postprocess scripts, and file overlays (`add-files`). Currently targets `releasever: 44`.
-- **`.repo` files**: Edit when adding/updating repository definitions (e.g., `cernvm.repo`, `pythia6.repo`, `vscode.repo`).
-- **`etc/`**: Overlay config files that get embedded into the image via `add-files` in `karuboniru-packages.yaml`.
+- **`karuboniru-packages.yaml`**: Add/remove packages, toggle features via `include:`, change repos, edit postprocess or `add-files`. Currently targets `releasever: 44`.
+- **`.repo` files** at root: Edit when adding/updating DNF repository definitions.
+- **`etc/`**: Overlay config files embedded into the image at compose time.
 
 ## Treefile conventions
 
