@@ -7,7 +7,7 @@ include:
   # - manifests/features/iwd.yaml
   # - manifests/features/aptx.yaml
   # - manifests/features/latex.yaml
-  # - manifests/features/nvidia.yaml
+  - manifests/features/nvidia.yaml
 ref: fedora/44/${basearch}/karuboniru-silverblue
 releasever: 44
 rojig:
