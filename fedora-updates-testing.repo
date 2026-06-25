@@ -4,3 +4,5 @@ mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=updates-testing-f$rel
 enabled=1
 gpgcheck=1
 metadata_expire=1d
+# exclude breakage packages from updates-testing
+excludepkgs=grub2*-2.12-61.*
