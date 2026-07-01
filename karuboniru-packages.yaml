@@ -142,6 +142,10 @@ packages:
   - kmscon
   - kmscon-gl
 
+  # Printer drivers
+  - foomatic-db
+  - foomatic-db-ppds
+
   # CJK fonts (for typst)
   - google-noto-serif-cjk-fonts
   - google-noto-sans-cjk-fonts
