@@ -104,6 +104,7 @@ packages:
   - root-unfold
   - root-unuran
   - root-xroofit
+  - root-histv7
   - egpythia6-standalone
   - pythia6
   - pythia6-devel
