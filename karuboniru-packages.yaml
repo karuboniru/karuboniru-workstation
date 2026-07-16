@@ -135,6 +135,12 @@ packages:
   - gh
   - zig
   - uv
+  - nodejs24
+  - nodejs24-bin
+  - nodejs24-devel
+  - nodejs24-full-i18n
+  - nodejs24-npm
+  - nodejs24-npm-bin
 
   # Desktop utilities
   - evince
