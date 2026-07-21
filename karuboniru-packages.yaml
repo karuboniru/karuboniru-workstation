@@ -35,6 +35,7 @@ packages:
   - wireguard-tools
   - git-lfs
   - btrbk
+  - bees
   - smartmontools
   - ddcutil
   - sedutil
