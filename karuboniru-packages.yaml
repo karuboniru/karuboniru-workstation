@@ -132,7 +132,6 @@ packages:
   - muvm
 
   # Developer tools & editors
-  - code
   - gh
   - zig
   - uv
