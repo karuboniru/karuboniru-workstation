@@ -7,7 +7,7 @@ include:
   # - manifests/features/iwd.yaml
   # - manifests/features/aptx.yaml
   # - manifests/features/latex.yaml
-  - manifests/features/nvidia.yaml
+  # - manifests/features/nvidia.yaml
 ref: fedora/44/${basearch}/karuboniru-silverblue
 releasever: 44
 rojig:
@@ -213,30 +213,3 @@ postprocess:
     systemctl enable rpm-ostreed-automatic.timer
     rm /etc/grub.d/30_os-prober
     sudo ln -s /usr/lib/systemd/system/kmsconvt@.service /etc/systemd/system/autovt@.service
-
-add-files:
-  [
-    [
-      "./etc/systemd/system.conf.d/accounting.conf",
-      "/etc/systemd/system.conf.d/accounting.conf",
-    ],
-    ["./etc/udev/rules.d/keyboard.rules", "/etc/udev/rules.d/keyboard.rules"],
-    [
-      "./etc/udev/rules.d/logitech-unifying.rules",
-      "/etc/udev/rules.d/logitech-unifying.rules",
-    ],
-    ["./etc/udev/rules.d/nvme-usb.rules", "/etc/udev/rules.d/nvme-usb.rules"],
-    ["./etc/udev/rules.d/rtl-sdr.rules", "/etc/udev/rules.d/rtl-sdr.rules"],
-    ["./etc/udev/rules.d/wd-disk.rules", "/etc/udev/rules.d/wd-disk.rules"],
-    [
-      "./etc/polkit-1/rules.d/49-nopasswd_global.rules",
-      /etc/polkit-1/rules.d/49-nopasswd_global.rules,
-    ],
-    ["./etc/krb5.conf.d/CC_IN2P3_FR", "/etc/krb5.conf.d/CC_IN2P3_FR"],
-    ["./etc/krb5.conf.d/IHEP_AC_CN", "/etc/krb5.conf.d/IHEP_AC_CN"],
-    [
-      "./etc/ssh/sshd_config.d/40-nopassword.conf",
-      "/etc/ssh/sshd_config.d/40-nopassword.conf",
-    ],
-    ["./etc/rpm-ostreed.conf", "/etc/rpm-ostreed.conf"],
-  ]
