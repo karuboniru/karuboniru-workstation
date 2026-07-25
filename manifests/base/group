@@ -85,3 +85,8 @@ dhcpcd:x:962:
 gluster:x:961:
 libvirtdbus:x:960:
 cvmfs:x:959:
+empower:x:958:
+malcontent-timer-ext-agent:x:957:
+malcontent-timerd:x:956:
+malcontent-webd:x:955:
+pcscd:x:954:
