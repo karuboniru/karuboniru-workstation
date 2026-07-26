@@ -73,6 +73,11 @@ packages:
   - liburing-devel
   - python3-devel
   - python3-libdnf5
+  - 'pkgconfig(expat)'
+  - 'pkgconfig(x11)'
+  - 'pkgconfig(opengl)'
+  - 'pkgconfig(libcurl)'
+  - 'cmake(zstd)'
 
   # Profiling & analysis
   - perf
