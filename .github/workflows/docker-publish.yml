@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: registry.fedoraproject.org/fedora:rawhide
+      image: registry.fedoraproject.org/fedora:44
       options: --privileged
       volumes:
         - /:/host:rw
@@ -37,7 +37,7 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: ${{ vars.COMPOSEFILE }}
         run: |
-          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo selinux-policy-targeted
+          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo selinux-policy-targeted clang
           df -h /host
           for i in '__t/*' 'usr/local/' '/usr/share/dotnet' '/opt' ; do
             rm -rf /host/$i || true
