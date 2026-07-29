@@ -5,3 +5,9 @@ packages:
 
 repos:
   - gundulabs
+
+postprocess:
+  - |
+    #!/usr/bin/env bash
+    echo "Switch to gaze authentication profile"
+    authselect select gaze with-face-simultaneous with-silent-lastlog --force --nobackup
