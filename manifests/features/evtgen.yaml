@@ -5,6 +5,3 @@ packages:
   - HepMC3-rootIO-devel
   - HepMC3-devel
   - HepMC3-search-devel
-
-repos:
-  - evtgen
