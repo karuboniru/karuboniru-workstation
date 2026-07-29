@@ -3,6 +3,7 @@ include:
   - manifests/features/root-pythia6.yaml
   - manifests/features/cvmfs.yaml
   - manifests/features/evtgen.yaml
+  - manifests/features/gundu.yaml
   # - manifests/features/howdy.yaml
   # - manifests/features/iwd.yaml
   # - manifests/features/aptx.yaml
