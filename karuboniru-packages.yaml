@@ -137,6 +137,7 @@ packages:
   - crun-krun
   - krunvm
   - muvm
+  - apptainer
 
   # Developer tools & editors
   - gh
