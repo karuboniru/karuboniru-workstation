@@ -195,6 +195,10 @@ packages:
   - mbedtls
   - libxcrypt-compat
 
+  - chatgpt
+
+remove-from-packages: [["chatgpt", "/etc/.*"]]
+
 exclude-packages:
   - low-memory-monitor
   - passim
@@ -208,6 +212,7 @@ repos:
   - vscode
   - dummy
   - pythia6
+  - codex
   # - llvm-snapshot
   # - llvm-snapshot-rundep
 
