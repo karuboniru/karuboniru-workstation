@@ -149,6 +149,7 @@ packages:
   - nodejs24-full-i18n
   - nodejs24-npm
   - nodejs24-npm-bin
+  - pnpm
 
   # Desktop utilities
   - evince
