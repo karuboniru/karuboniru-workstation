@@ -51,7 +51,7 @@ Feature yamls (`manifests/features/*.yaml`) are self-contained: each bundles its
 
 ## Key files to edit
 
-- **`karuboniru-packages.yaml`**: Add/remove packages, toggle features via `include:`, change repos, edit postprocess or `add-files`. Currently targets `releasever: 44`.
+- **`karuboniru-packages.yaml`**: Add/remove packages, toggle features via `include:`, change repos, edit postprocess or `add-files`. Currently targets `releasever: 45`.
 - **`.repo` files** at root: Edit when adding/updating DNF repository definitions.
 - **`etc/`**: Overlay config files embedded into the image at compose time.
 
@@ -64,4 +64,4 @@ Feature yamls (`manifests/features/*.yaml`) are self-contained: each bundles its
 
 ## Branching for new Fedora releases
 
-When updating to a new Fedora release, update `releasever` in `common.yaml` and `karuboniru-packages.yaml`, and update the `ref:` line in `karuboniru-packages.yaml` (e.g., `ref: fedora/44/${basearch}/karuboniru-silverblue`).
+When updating to a new Fedora release, update `releasever` in `common.yaml` and `karuboniru-packages.yaml`, and update the `ref:` line in `karuboniru-packages.yaml` (e.g., `ref: fedora/45/${basearch}/karuboniru-silverblue`).

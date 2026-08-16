@@ -21,9 +21,9 @@ repo_gpgcheck=0
 
 
 [rpmfusion-free-updates]
-name=RPM Fusion for Fedora $releasever - Free - Updates
-#baseurl=http://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch/
-metalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-$releasever&arch=$basearch
+name=RPM Fusion for Fedora 44 - Free - Updates
+#baseurl=http://download1.rpmfusion.org/free/fedora/updates/44/$basearch/
+metalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-44&arch=$basearch
 enabled=0
 type=rpm-md
 gpgcheck=0
@@ -51,9 +51,9 @@ repo_gpgcheck=0
 
 
 [rpmfusion-nonfree-updates]
-name=RPM Fusion for Fedora $releasever - Nonfree - Updates
-#baseurl=http://download1.rpmfusion.org/nonfree/fedora/updates/$releasever/$basearch/
-metalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-updates-released-$releasever&arch=$basearch
+name=RPM Fusion for Fedora 44 - Nonfree - Updates
+#baseurl=http://download1.rpmfusion.org/nonfree/fedora/updates/44/$basearch/
+metalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-updates-released-44&arch=$basearch
 enabled=0
 type=rpm-md
 gpgcheck=0

@@ -4,7 +4,7 @@ variables:
 include:
   - common.yaml
 
-ref: fedora/44/${basearch}/base-atomic
+ref: fedora/45/${basearch}/base-atomic
 rojig:
   name: fedora-base-atomic
   summary: "Fedora Base Atomic"

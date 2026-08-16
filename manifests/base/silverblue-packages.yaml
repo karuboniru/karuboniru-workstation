@@ -33,8 +33,6 @@ packages:
   - gnome-user-docs
   - gnome-user-share
   - gvfs-afc
-  - gvfs-afp
-  - gvfs-archive
   - gvfs-fuse
   - gvfs-goa
   - gvfs-gphoto2
