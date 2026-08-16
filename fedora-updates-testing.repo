@@ -1,8 +1,12 @@
 [fedora-updates-testing]
-name=Fedora $basearch Updates
-mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=updates-testing-f$releasever&arch=$basearch
+name=Fedora $releasever - $basearch - Test Updates
+metalink=https://mirrors.fedoraproject.org/metalink?repo=updates-testing-f$releasever&arch=$basearch
 enabled=1
+repo_gpgcheck=0
+type=rpm
 gpgcheck=1
-metadata_expire=1d
+metadata_expire=6h
+gpgkey=file:///usr/share/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
 # exclude breakage packages from updates-testing
 excludepkgs=grub2*-2.12-61.*

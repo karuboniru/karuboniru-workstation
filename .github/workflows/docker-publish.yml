@@ -37,12 +37,12 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: ${{ vars.COMPOSEFILE }}
         run: |
-          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo selinux-policy-targeted clang
-          df -h /host
-          for i in '__t/*' 'usr/local/' '/usr/share/dotnet' '/opt' ; do
-            rm -rf /host/$i || true
-          done
-          df -h /host
+          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo selinux-policy-targeted clang distribution-gpg-keys fedora-gpg-keys
+          # df -h /host
+          # for i in '__t/*' 'usr/local/' '/usr/share/dotnet' '/opt' ; do
+          #   rm -rf /host/$i || true
+          # done
+          # df -h /host
           skopeo login -u $username -p $password $registry
           mkdir -p repo cache
           ostree init --repo=repo --mode=archive
