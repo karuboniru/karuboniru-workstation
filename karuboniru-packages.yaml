@@ -42,6 +42,7 @@ packages:
   - ddcutil
   - sedutil
   - iperf3
+  - intel-lpmd
 
   # Fedora packaging tools
   - koji
