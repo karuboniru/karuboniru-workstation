@@ -62,9 +62,6 @@ packages:
   - buildah
   - podman
   - skopeo
-  # Keep slirp4netns for rootless containers until it's fully deprecated in podman
-  # See: https://github.com/fedora-silverblue/issue-tracker/issues/547
-  - slirp4netns
   # Keep fuse-overlayfs for compatibilty and rootless containers use cases
   # See: https://github.com/coreos/fedora-coreos-tracker/issues/1749
   - fuse-overlayfs
@@ -152,6 +149,8 @@ exclude-packages:
   - tk
   # See: https://github.com/fedora-silverblue/issue-tracker/issues/646
   - hplip-gui
+  # Legacy PolicyKit .pkla compatibility is not supported on Atomic Desktops
+  - polkit-pkla-compat
 
 postprocess:
   - |

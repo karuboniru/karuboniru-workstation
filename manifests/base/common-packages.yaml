@@ -192,6 +192,7 @@ packages-x86_64:
   - amd-ucode-firmware
   - cirrus-audio-firmware
   - intel-audio-firmware
+  - intel-lpmd
   - intel-vsc-firmware
   - libva-intel-media-driver
   - mcelog
