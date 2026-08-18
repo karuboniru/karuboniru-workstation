@@ -5,6 +5,7 @@ packages:
 
 repos:
   - gundulabs
+  - dummy
 
 postprocess:
   - |
