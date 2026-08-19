@@ -155,6 +155,8 @@ packages:
   - evince
   - evince-djvu
   - kmscon
+  - kmscon-pango
+  - kmscon-freetype
   - kmscon-gl
 
   # Printer drivers
