@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp -av $RPMOSTREE_WORKDIR/etc ./usr/
+cp -av $RPMOSTREE_WORKDIR/usr ./

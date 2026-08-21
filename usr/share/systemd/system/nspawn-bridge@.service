@@ -1,0 +1,6 @@
+[Unit]
+Description=Attach nspawn interface %i to br0
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/attach-nspawn-bridge %i

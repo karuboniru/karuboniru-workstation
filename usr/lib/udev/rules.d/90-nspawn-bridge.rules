@@ -1,0 +1,3 @@
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="ns-*", \
+    TAG+="systemd", \
+    ENV{SYSTEMD_WANTS}+="nspawn-bridge@%k.service"
