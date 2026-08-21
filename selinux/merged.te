@@ -11,7 +11,7 @@ require {
     type systemd_nsresourced_t;
     type unlabeled_t;
 
-    class capability { chown dac_override dac_read_search fowner setgid setuid };
+    class capability { chown dac_override dac_read_search fowner setgid setuid sys_admin };
     class cap_userns { net_admin sys_admin sys_ptrace };
     class dir { add_name create getattr ioctl open read remove_name rename search setattr write };
     class file { create getattr ioctl link lock open read rename setattr unlink write };
@@ -26,7 +26,7 @@ allow sshd_session_t sshd_t:process signal;
 #============= systemd_mountfsd_t ==============
 allow systemd_mountfsd_t nsfs_t:file { ioctl open read };
 allow systemd_mountfsd_t self:cap_userns { sys_admin sys_ptrace };
-allow systemd_mountfsd_t self:capability { chown dac_override dac_read_search setgid setuid };
+allow systemd_mountfsd_t self:capability { chown dac_override dac_read_search setgid setuid sys_admin };
 allow systemd_mountfsd_t self:user_namespace create;
 allow systemd_mountfsd_t systemd_machined_var_lib_t:dir { getattr ioctl search };
 allow systemd_mountfsd_t unlabeled_t:dir { add_name create getattr open read remove_name rename search setattr write };
