@@ -232,12 +232,4 @@ postprocess:
     rm /etc/grub.d/30_os-prober
     sudo ln -sfn /usr/lib/systemd/system/kmsconvt@.service /etc/systemd/system/autovt@.service
 
-    cd /usr/share/extra-selinux
-    checkmodule -M -m -o merged.mod merged.te
-    semodule_package -o merged.pp -m merged.mod
-    semodule -i merged.pp
-    rm merged.pp merged.mod
-
     sed '/pam_gnome_keyring/d' -i /etc/pam.d/*
-
-add-files: [["selinux/merged.te", "/usr/share/extra-selinux/merged.te"]]
