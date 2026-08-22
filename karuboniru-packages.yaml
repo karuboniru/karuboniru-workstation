@@ -121,6 +121,12 @@ packages:
   - ykpers
   - yubikey-manager
   - openssl
+  - cargo-credential-oo7
+  - git-credential-oo7
+  - oo7-cli
+  - oo7-daemon
+  - oo7-portal
+  - pam_oo7
 
   # Virtualization & containers
   - virt-install
@@ -231,5 +237,7 @@ postprocess:
     semodule_package -o merged.pp -m merged.mod
     semodule -i merged.pp
     rm merged.pp merged.mod
+
+    sed '/pam_gnome_keyring/d' -i /etc/pam.d/*
 
 add-files: [["selinux/merged.te", "/usr/share/extra-selinux/merged.te"]]
