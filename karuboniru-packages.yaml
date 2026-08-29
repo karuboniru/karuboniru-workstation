@@ -160,6 +160,7 @@ packages:
   # Desktop utilities
   - evince
   - evince-djvu
+  - gpaste
   - kmscon
   - kmscon-pango
   - kmscon-freetype
