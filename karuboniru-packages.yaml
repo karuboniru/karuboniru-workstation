@@ -161,6 +161,7 @@ packages:
   - evince
   - evince-djvu
   - gpaste
+  - gnome-shell-extension-gpaste
   - kmscon
   - kmscon-pango
   - kmscon-freetype
