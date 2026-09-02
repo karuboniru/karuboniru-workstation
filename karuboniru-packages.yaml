@@ -143,6 +143,7 @@ packages:
   - crun-krun
   - krunvm
   - muvm
+  - bcvk
   - apptainer
 
   # Developer tools & editors
