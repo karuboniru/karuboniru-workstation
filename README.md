@@ -1,8 +1,8 @@
-# Modified base image for Fedora Silverblue
+# Modified base image for Fedora Kinoite
 
 [![Build Ostree Container Image](https://github.com/karuboniru/karuboniru-workstation/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/karuboniru/karuboniru-workstation/actions/workflows/docker-publish.yml)
 
-Personal custom Fedora Silverblue (bootc) base image configuration.
+Personal custom Fedora Kinoite (KDE Plasma, bootc) base image configuration without Firefox.
 
 Images are built via GitHub Actions and pushed to `ghcr.io/karuboniru/karuboniru-workstation`.
 
@@ -20,7 +20,7 @@ Production builds happen in GitHub Actions using `rpm-ostree compose image`.
 
 - `karuboniru-packages.yaml` — root treefile defining this custom image
 - `*.repo` — DNF repository definitions
-- `manifests/base/` — upstream Fedora Silverblue base manifests
+- `manifests/base/` — Fedora Atomic base manifests, using the Kinoite desktop
 - `manifests/features/` — optional feature yamls (cvmfs, evtgen, root-pythia6, etc.)
 - `etc/` — config files embedded into the image via `add-files`
 

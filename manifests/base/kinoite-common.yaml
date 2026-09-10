@@ -1,0 +1,16 @@
+variables:
+  variant: "kinoite"
+
+include:
+  - common.yaml
+  - kinoite-shared.yaml
+  - kinoite-packages.yaml
+
+ref: fedora/45/${basearch}/kinoite
+rojig:
+  name: fedora-kde
+  summary: "Fedora Kinoite"
+  license: MIT
+
+packages:
+  - fedora-release-kinoite

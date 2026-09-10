@@ -1,7 +1,7 @@
 packages:
   - gaze 
   - gaze-gui
-  - gaze-gnome-extension
+  - gaze-kde
 
 repos:
   - gundulabs

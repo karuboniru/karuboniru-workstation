@@ -1,5 +1,5 @@
 include:
-  - manifests/base/silverblue.yaml
+  - manifests/base/kinoite.yaml
   - manifests/features/root-pythia6.yaml
   - manifests/features/cvmfs.yaml
   - manifests/features/evtgen.yaml
@@ -9,11 +9,11 @@ include:
   # - manifests/features/aptx.yaml
   # - manifests/features/latex.yaml
   # - manifests/features/nvidia.yaml
-ref: fedora/45/${basearch}/karuboniru-silverblue
+ref: fedora/45/${basearch}/karuboniru-kinoite
 releasever: 45
 rojig:
-  name: fedora-silverblue-karuboniru
-  summary: "Karuboniru's Silverblue Workstation"
+  name: fedora-kinoite-karuboniru
+  summary: "Karuboniru's Kinoite Workstation"
   license: MIT
 
 variables:
@@ -161,8 +161,6 @@ packages:
   # Desktop utilities
   - evince
   - evince-djvu
-  - gpaste
-  - gnome-shell-extension-gpaste
   - kmscon
   - kmscon-pango
   - kmscon-freetype
@@ -212,6 +210,8 @@ packages:
 remove-from-packages: [["chatgpt", "/etc/.*"]]
 
 exclude-packages:
+  - firefox
+  - firefox-langpacks
   - low-memory-monitor
   - passim
   - gnome-session-xsession
