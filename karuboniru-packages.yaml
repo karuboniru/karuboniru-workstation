@@ -216,6 +216,8 @@ exclude-packages:
   - passim
   - gnome-session-xsession
   - hplip-gui
+  - gnome-software
+  - gnome-software-rpm-ostree
 
 repos:
   - fedora

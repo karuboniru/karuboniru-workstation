@@ -28,7 +28,6 @@ packages:
   - gnome-session-wayland-session
   - gnome-settings-daemon
   - gnome-shell
-  - gnome-software
   - gnome-system-monitor
   - gnome-user-docs
   - gnome-user-share
