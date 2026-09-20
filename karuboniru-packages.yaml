@@ -129,6 +129,7 @@ packages:
   - pam_oo7
 
   # Virtualization & containers
+  - agent-vm
   - virt-install
   - libvirt-dbus
   - libvirt-daemon-config-network
@@ -227,6 +228,7 @@ repos:
   - dummy
   - pythia6
   - codex
+  - agent-vm
   # - llvm-snapshot
   # - llvm-snapshot-rundep
 
