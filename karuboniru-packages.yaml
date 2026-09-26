@@ -42,6 +42,7 @@ packages:
   - ddcutil
   - sedutil
   - iperf3
+  - fio
 
   # Fedora packaging tools
   - koji
