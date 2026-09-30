@@ -170,6 +170,10 @@ packages:
   - kmscon-freetype
   - kmscon-gl
 
+  # Wayland display / remote
+  - waypipe
+  - xwayland-satellite
+
   # Printer drivers
   - foomatic-db
   - foomatic-db-ppds
