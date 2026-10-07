@@ -244,7 +244,7 @@ postprocess:
     rm /etc/grub.d/30_os-prober
     sudo ln -sfn /usr/lib/systemd/system/kmsconvt@.service /etc/systemd/system/autovt@.service
 
-    # Disable keyring PAM actions with an empty service allowlist, preserving stack entries.
+    # Replace keyring PAM actions with success, preserving stack entries without requiring keyring.
     sed -E -i --follow-symlinks \
-      '/^[[:space:]]*#/! s/(pam_gnome_keyring\.so)([[:space:]].*)?$/\1 only_if=/' \
+      '/^[[:space:]]*#/! s@([[:space:]])([^[:space:]]*/)?pam_gnome_keyring\.so([[:space:]].*)?$@\1pam_permit.so@' \
       /etc/pam.d/*
