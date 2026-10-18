@@ -2,11 +2,11 @@
 packages:
   - ModemManager
   - NetworkManager-adsl
+  - NetworkManager-libreswan-gnome
   - NetworkManager-openconnect-gnome
   - NetworkManager-openvpn-gnome
   - NetworkManager-ppp
   - NetworkManager-ssh-gnome
-  - NetworkManager-vpnc-gnome
   - NetworkManager-wwan
   - adobe-source-code-pro-fonts
   - avahi
