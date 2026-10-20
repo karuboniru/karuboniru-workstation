@@ -5,5 +5,5 @@ type=rpm-md
 skip_if_unavailable=True
 gpgcheck=0
 repo_gpgcheck=0
-enabled=1
+enabled=0
 enabled_metadata=1
