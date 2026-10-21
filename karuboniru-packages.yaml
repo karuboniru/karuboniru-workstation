@@ -35,6 +35,7 @@ packages:
   - ripgrep
   - htop
   - wireguard-tools
+  - git
   - git-lfs
   - btrbk
   - bees
