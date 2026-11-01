@@ -150,6 +150,7 @@ packages:
   - apptainer
 
   # Developer tools & editors
+  - android-tools
   - gh
   - zig
   - uv
