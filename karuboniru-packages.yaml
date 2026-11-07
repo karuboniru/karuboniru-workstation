@@ -35,6 +35,8 @@ packages:
   - ripgrep
   - htop
   - wireguard-tools
+  - netbird
+  - netbird-ui
   - git
   - git-lfs
   - btrbk
@@ -231,6 +233,7 @@ repos:
   - dummy
   - pythia6
   - agent-vm
+  - NetBird
   # - llvm-snapshot
   # - llvm-snapshot-rundep
 
