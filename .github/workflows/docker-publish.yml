@@ -28,6 +28,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Disable host bwrap AppArmor profile
+        run: |
+          # Ubuntu's bwrap profile denies capabilities needed by systemd-sysusers.
+          # Access the disposable runner's AppArmor tools through the host mount.
+          if [ -f /host/etc/apparmor.d/bwrap-userns-restrict ]; then
+            chroot /host /usr/sbin/apparmor_parser -R /etc/apparmor.d/bwrap-userns-restrict
+          fi
+
       - name: Build
         env:
           registry: ghcr.io
