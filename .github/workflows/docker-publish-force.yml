@@ -1,50 +1,34 @@
-name: Build Ostree Container Image
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-on:
-  workflow_dispatch
-
+name: Diagnose AppArmor and bubblewrap
+on: workflow_dispatch
+permissions:
+  contents: read
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    container:
-      image: registry.fedoraproject.org/fedora:45
-      options: --privileged
-      volumes:
-        - /:/host:rw
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-
+  diagnose:
+    runs-on: ubuntu-26.04
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Build
-        env:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          image: ${{ github.repository }}
-          tag: ${{ github.ref_name }}
-          composefile: ${{ vars.COMPOSEFILE }}
+      - uses: actions/checkout@v3
+      - name: Inspect host
         run: |
-          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo selinux-policy-targeted clang
-          df -h /host
-          for i in '__t/*' 'usr/local/' '/usr/share/dotnet' '/opt' ; do
-            rm -rf /host/$i || true
-          done
-          df -h /host
-          skopeo login -u $username -p $password $registry
-          mkdir -p repo cache
-          ostree init --repo=repo --mode=archive
-          rpm-ostree compose image --initialize-mode=if-not-exists \
-            --format registry --layer-repo repo --cachedir=cache --copy-retry-times=4 \
-            --max-layers 256 --force-nocache \
-            $composefile \
-            $registry/$image:$tag
+          uname -a
+          sudo aa-status
+          sudo cat /etc/apparmor.d/bwrap-userns-restrict
+      - name: Prepare Fedora probe image
+        run: |
+          docker build -t apparmor-probe - <<'EOF'
+          FROM registry.fedoraproject.org/fedora@sha256:b3bfa9b46c1a42b87020ea9053b56d24d713a0c551427669dee177230f1c720e
+          RUN dnf -y --enablerepo=updates-testing install bubblewrap systemd
+          EOF
+      - name: Probe privileged container
+        run: docker run --rm --privileged -v "$PWD/diagnostics:/diagnostics:ro" apparmor-probe bash /diagnostics/apparmor-probe.sh
+      - name: Probe explicit AppArmor unconfined
+        run: docker run --rm --privileged --security-opt apparmor=unconfined -v "$PWD/diagnostics:/diagnostics:ro" apparmor-probe bash /diagnostics/apparmor-probe.sh
+      - name: Inspect AppArmor denials
+        if: always()
+        run: sudo dmesg | grep -E 'apparmor="DENIED"|unpriv_bwrap' | tail -n 60 || true
+      - name: Unload bwrap profile on this disposable runner
+        run: sudo apparmor_parser -R /etc/apparmor.d/bwrap-userns-restrict
+      - name: Probe after unloading bwrap profile
+        run: docker run --rm --privileged --security-opt apparmor=unconfined -v "$PWD/diagnostics:/diagnostics:ro" apparmor-probe bash /diagnostics/apparmor-probe.sh
+      - name: Restore host profile
+        if: always()
+        run: sudo apparmor_parser -r /etc/apparmor.d/bwrap-userns-restrict
