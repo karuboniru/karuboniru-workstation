@@ -1,34 +1,46 @@
-name: Diagnose AppArmor and bubblewrap
+name: Diagnose AppArmor from job container
 on: workflow_dispatch
 permissions:
   contents: read
 jobs:
   diagnose:
     runs-on: ubuntu-26.04
+    container:
+      image: registry.fedoraproject.org/fedora@sha256:b3bfa9b46c1a42b87020ea9053b56d24d713a0c551427669dee177230f1c720e
+      options: --privileged
+      volumes:
+        - /:/host:rw
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v3
-      - name: Inspect host
+      - name: Prepare probe and inspect container and host
         run: |
-          uname -a
-          sudo aa-status
-          sudo cat /etc/apparmor.d/bwrap-userns-restrict
-      - name: Prepare Fedora probe image
+          dnf -y --enablerepo=updates-testing install bubblewrap systemd
+          cat /etc/os-release
+          cat /host/etc/os-release
+          cat /proc/self/attr/current
+          chroot /host /usr/sbin/aa-status
+          test -f /host/etc/apparmor.d/bwrap-userns-restrict
+      - name: Reproduce denial before unloading
         run: |
-          docker build -t apparmor-probe - <<'EOF'
-          FROM registry.fedoraproject.org/fedora@sha256:b3bfa9b46c1a42b87020ea9053b56d24d713a0c551427669dee177230f1c720e
-          RUN dnf -y --enablerepo=updates-testing install bubblewrap systemd
-          EOF
-      - name: Probe privileged container
-        run: docker run --rm --privileged -v "$PWD/diagnostics:/diagnostics:ro" apparmor-probe bash /diagnostics/apparmor-probe.sh
-      - name: Probe explicit AppArmor unconfined
-        run: docker run --rm --privileged --security-opt apparmor=unconfined -v "$PWD/diagnostics:/diagnostics:ro" apparmor-probe bash /diagnostics/apparmor-probe.sh
-      - name: Inspect AppArmor denials
+          bash diagnostics/apparmor-probe.sh |& tee /tmp/probe-before.log
+          grep -F 'bwrap sysusers exit: 1' /tmp/probe-before.log
+          grep -F 'Permission denied' /tmp/probe-before.log
+          grep -F 'Inner AppArmor profile: bwrap//&unpriv_bwrap (enforce)' /tmp/probe-before.log
+      - name: Unload host profile through chroot from job container
+        run: |
+          chroot /host /usr/sbin/apparmor_parser -R /etc/apparmor.d/bwrap-userns-restrict
+      - name: Verify sysusers succeeds after unloading
+        run: |
+          bash diagnostics/apparmor-probe.sh |& tee /tmp/probe-after.log
+          grep -F 'Inner AppArmor profile: unconfined' /tmp/probe-after.log
+          grep -F 'bwrap mode-000 read exit: 0' /tmp/probe-after.log
+          grep -F 'bwrap sysusers exit: 0' /tmp/probe-after.log
+      - name: Show audit evidence
         if: always()
-        run: sudo dmesg | grep -E 'apparmor="DENIED"|unpriv_bwrap' | tail -n 60 || true
-      - name: Unload bwrap profile on this disposable runner
-        run: sudo apparmor_parser -R /etc/apparmor.d/bwrap-userns-restrict
-      - name: Probe after unloading bwrap profile
-        run: docker run --rm --privileged --security-opt apparmor=unconfined -v "$PWD/diagnostics:/diagnostics:ro" apparmor-probe bash /diagnostics/apparmor-probe.sh
-      - name: Restore host profile
+        run: dmesg | grep -E 'apparmor="DENIED"|unpriv_bwrap' | tail -n 40 || true
+      - name: Restore host profile through chroot
         if: always()
-        run: sudo apparmor_parser -r /etc/apparmor.d/bwrap-userns-restrict
+        run: chroot /host /usr/sbin/apparmor_parser -r /etc/apparmor.d/bwrap-userns-restrict
