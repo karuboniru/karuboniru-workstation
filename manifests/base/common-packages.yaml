@@ -90,8 +90,6 @@ packages:
   - ibus-typing-booster
   - intel-gpu-firmware
   - iproute
-  - iptables-nft
-  - iptstate
   - iputils
   - iwlegacy-firmware
   - iwlwifi-dvm-firmware
