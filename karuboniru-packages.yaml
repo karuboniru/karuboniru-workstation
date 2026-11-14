@@ -136,7 +136,10 @@ packages:
   - agent-vm
   - virt-install
   - libvirt-dbus
+  - libvirt-daemon
   - libvirt-daemon-config-network
+  - libvirt-gconfig
+  - libvirt-gobject
   # Explicit libvirt-daemon-kvm dependencies, without the nwfilter driver.
   - libvirt-daemon-common
   - libvirt-daemon-driver-interface
@@ -229,6 +232,9 @@ packages:
   - libxcrypt-compat
 
 exclude-packages:
+  - ebtables-legacy
+  - iptables-legacy
+  - iptables-legacy-libs
   - iptables-nft
   - libvirt-daemon-driver-nwfilter
   - iptstate
