@@ -9,7 +9,9 @@ trap 'rm -rf -- "$work"' EXIT
 
 is_chunked() {
     jq -e '
-        .mediaType == "application/vnd.oci.image.manifest.v1+json" and
+        # rpm-ostree can omit the optional manifest mediaType.
+        .schemaVersion == 2 and
+        (.mediaType == null or .mediaType == "application/vnd.oci.image.manifest.v1+json") and
         (.layers | length > 0 and all(.[];
             .mediaType == "application/vnd.oci.image.layer.v1.tar+zstd" and
             (.annotations["io.github.containers.zstd-chunked.manifest-checksum"] // "" | test("^sha256:[0-9a-f]{64}$")) and
