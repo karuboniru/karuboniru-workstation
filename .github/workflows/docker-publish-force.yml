@@ -8,6 +8,10 @@ name: Build Ostree Container Image
 on:
   workflow_dispatch
 
+concurrency:
+  group: publish-image-${{ github.ref_name }}
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,17 +46,11 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: ${{ vars.COMPOSEFILE }}
         run: |
-          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo selinux-policy-targeted clang
+          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo jq diffutils selinux-policy-targeted clang
           df -h /host
           for i in '__t/*' 'usr/local/' '/usr/share/dotnet' '/opt' ; do
             rm -rf /host/$i || true
           done
           df -h /host
           skopeo login -u $username -p $password $registry
-          mkdir -p repo cache
-          ostree init --repo=repo --mode=archive
-          rpm-ostree compose image --initialize-mode=if-not-exists \
-            --format registry --layer-repo repo --cachedir=cache --copy-retry-times=4 \
-            --max-layers 256 --force-nocache \
-            $composefile \
-            $registry/$image:$tag
+          bash scripts/publish-image.sh --force-nocache

@@ -11,6 +11,10 @@ on:
   push:
     branches: ["*"]
 
+concurrency:
+  group: publish-image-${{ github.ref_name }}
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -45,17 +49,11 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: ${{ vars.COMPOSEFILE }}
         run: |
-          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo selinux-policy-targeted clang distribution-gpg-keys fedora-gpg-keys
+          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo jq diffutils selinux-policy-targeted clang distribution-gpg-keys fedora-gpg-keys
           # df -h /host
           # for i in '__t/*' 'usr/local/' '/usr/share/dotnet' '/opt' ; do
           #   rm -rf /host/$i || true
           # done
           # df -h /host
           skopeo login -u $username -p $password $registry
-          mkdir -p repo cache
-          ostree init --repo=repo --mode=archive
-          rpm-ostree compose image --initialize-mode=if-not-exists \
-            --format registry --layer-repo repo --cachedir=cache --copy-retry-times=4 \
-            --max-layers 256 \
-            $composefile \
-            $registry/$image:$tag
+          bash scripts/publish-image.sh

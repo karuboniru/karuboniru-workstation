@@ -14,7 +14,7 @@ For local testing on a Fedora machine with podman and rpm-ostree installed:
 podman unshare -- rpm-ostree compose tree --repo repo --cachedir=cache --unified-core karuboniru-packages.yaml
 ```
 
-Production builds happen in GitHub Actions using `rpm-ostree compose image`.
+Production builds happen in GitHub Actions using `scripts/publish-image.sh`. It publishes OCI images with `zstd:chunked` layers and verifies the layer annotations on the registry.
 
 ## Repository structure
 

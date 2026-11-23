@@ -10,15 +10,7 @@ Images are built via GitHub Actions (`.github/workflows/docker-publish.yml`) and
 
 ## How builds work
 
-The CI uses `rpm-ostree compose image` inside a privileged Fedora rawhide container:
-
-```sh
-rpm-ostree compose image --initialize-mode=if-not-exists \
-  --format registry --layer-repo repo --cachedir=cache --copy-retry-times=4 \
-  --max-layers 256 \
-  $composefile \
-  $registry/$image:$tag
-```
+The GitHub Actions workflows run `scripts/publish-image.sh` in a privileged Fedora container. The script composes the OSTree commit, encapsulates it as a local OCI image, and publishes it with Skopeo using `zstd:chunked` compression. The manual workflow passes `--force-nocache`.
 
 For local testing on a Fedora machine with podman and rpm-ostree installed:
 
