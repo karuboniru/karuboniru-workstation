@@ -2,3 +2,11 @@
 # See: https://fedoraproject.org/wiki/Changes/DNFAndBootcInImageModeFedora
 packages:
   - bootc
+
+postprocess:
+  - |
+    #!/usr/bin/env bash
+    set -xeuo pipefail
+
+    install -d -m 0755 /usr/lib/dracut/dracut.conf.d
+    echo 'add_dracutmodules+=" bootc "' > /usr/lib/dracut/dracut.conf.d/20-atomic-bootc.conf
