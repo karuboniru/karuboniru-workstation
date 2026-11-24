@@ -4,8 +4,16 @@ set -euo pipefail
 # The workflows provide the authenticated registry, image name, tag and treefile.
 remote="docker://${registry}/${image}"
 target="${remote}:${tag}"
+quay_target="docker://quay.io/karuboniru/karuboniru-workstation:${tag}"
 work=$(mktemp -d)
 trap 'rm -rf -- "$work"' EXIT
+
+publish() {
+    local source=$1 destination=$2 manifest=$3
+    skopeo copy --retry-times 4 --preserve-digests "$source" "$destination"
+    skopeo inspect --raw --retry-times 4 "$destination" >"$work/published"
+    cmp "$manifest" "$work/published"
+}
 
 is_chunked() {
     jq -e '
@@ -51,7 +59,12 @@ if [[ -e $work/changed ]]; then
         "${packing_args[@]}" "$(<"$work/commit")" "$source"
     skopeo inspect --raw "$source" >"$work/manifest"
 elif is_chunked "$work/manifest"; then
-    echo "Inputs unchanged and $target already uses zstd:chunked."
+    if skopeo inspect --raw --retry-times 4 "$quay_target" >"$work/quay-manifest" &&
+        cmp -s "$work/manifest" "$work/quay-manifest"; then
+        echo "Inputs unchanged and both registries are up to date."
+    else
+        publish "$previous" "$quay_target" "$work/manifest"
+    fi
     exit 0
 else
     # Migrate an unchanged legacy image without creating another OSTree commit.
@@ -82,6 +95,5 @@ if ! is_chunked "$manifest"; then
     exit 1
 fi
 
-skopeo copy --retry-times 4 --preserve-digests "dir:$work/chunked" "$target"
-skopeo inspect --raw --retry-times 4 "$target" >"$work/published"
-cmp "$manifest" "$work/published"
+publish "dir:$work/chunked" "$target" "$manifest"
+publish "dir:$work/chunked" "$quay_target" "$manifest"
