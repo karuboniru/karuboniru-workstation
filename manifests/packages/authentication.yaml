@@ -1,0 +1,18 @@
+packages:
+  # Security / authentication
+  - tpm2-pkcs11
+  - tpm2-pkcs11-tools
+  - tpm2-tools
+  - seahorse
+  - gnupg2-scdaemon
+  - p11-kit-client
+  - ykclient
+  - ykpers
+  - yubikey-manager
+  - openssl
+  - cargo-credential-oo7
+  - git-credential-oo7
+  - oo7-cli
+  - oo7-daemon
+  - oo7-portal
+  - pam_oo7

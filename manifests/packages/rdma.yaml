@@ -1,0 +1,9 @@
+packages:
+  # InfiniBand / RDMA
+  - libibverbs
+  - libibverbs-utils
+  - infiniband-diags
+  - rdma-core
+  - mstflint
+  - qperf
+  - perftest

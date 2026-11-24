@@ -1,0 +1,25 @@
+packages:
+  # Shell & system utilities
+  - zsh
+  - ripgrep
+  - htop
+  - wireguard-tools
+  - netbird
+  - netbird-ui
+  - git
+  - git-lfs
+  - btrbk
+  - bees
+  - smartmontools
+  - ddcutil
+  - sedutil
+  - iperf3
+  - fio
+
+  # System libraries & compatibility
+  - libcurl
+  - aardvark-dns
+  - gmp
+  - libssh2
+  - mbedtls
+  - libxcrypt-compat

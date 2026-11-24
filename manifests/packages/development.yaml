@@ -1,0 +1,57 @@
+packages:
+  # Fedora packaging tools
+  - koji
+  - fedpkg
+  - copr-cli
+
+  # Compilers & build tools
+  - gcc
+  - gcc-c++
+  - gcc-gfortran
+  - clang
+  - clang-analyzer
+  - clang-tools-extra
+  - llvm
+  - lld
+  - lldb
+  - mold
+  - cmake
+  - meson
+  - ninja-build
+  - gdb
+  - bear
+  - patch
+  - libasan
+
+  # Development libraries
+  - /usr/include/eigen3
+  - json-devel
+  - gsl-devel
+  - boost-devel
+  - liburing-devel
+  - python3-devel
+  - python3-libdnf5
+  - 'pkgconfig(expat)'
+  - 'pkgconfig(x11)'
+  - 'pkgconfig(opengl)'
+  - 'pkgconfig(libcurl)'
+  - 'cmake(zstd)'
+
+  # Profiling & analysis
+  - perf
+  - valgrind
+  - strace
+  - binwalk
+
+  # Developer tools & editors
+  - android-tools
+  - gh
+  - zig
+  - uv
+  - nodejs24
+  - nodejs24-bin
+  - nodejs24-devel
+  - nodejs24-full-i18n
+  - nodejs24-npm
+  - nodejs24-npm-bin
+  - pnpm

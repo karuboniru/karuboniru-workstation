@@ -21,6 +21,7 @@ Production builds happen in GitHub Actions using `scripts/publish-image.sh`. It 
 - `karuboniru-packages.yaml` — root treefile defining this custom image
 - `*.repo` — DNF repository definitions
 - `manifests/base/` — upstream Fedora Silverblue base manifests
+- `manifests/packages/` — workstation packages grouped by purpose
 - `manifests/features/` — optional feature yamls (cvmfs, evtgen, root-pythia6, etc.)
 - `etc/` — config files embedded into the image via `add-files`
 

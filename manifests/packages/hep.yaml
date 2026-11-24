@@ -1,0 +1,14 @@
+packages:
+  # HEP / physics build dependencies (GENIE, NuWro, GiBUU)
+  - libxml2-devel
+  - pythia8-devel
+  - log4cpp-devel
+  - libnsl2-devel
+  - lhapdf-devel
+  - /usr/lib64/libbz2.so
+
+  # HEP data access (XRootD, VOMS)
+  - xrootd-client
+  - xrootd-voms
+  - voms-clients-cpp
+  - rclone

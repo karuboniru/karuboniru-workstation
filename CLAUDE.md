@@ -23,11 +23,12 @@ Otherwise, builds happen in CI or require a privileged environment with `rpm-ost
 ## Repository structure
 
 ```
-karuboniru-packages.yaml   # root treefile — the only file to edit for personal packages
+karuboniru-packages.yaml   # root treefile — includes package groups and features
 *.repo                     # DNF repo definitions (all at root, same level as root treefile)
 etc/                       # config files embedded into image via add-files
 manifests/
   base/                    # upstream Fedora Silverblue stack (silverblue.yaml, common.yaml, etc.)
+  packages/                # workstation packages grouped by purpose
   features/                # optional feature yamls (cvmfs, evtgen, root-pythia6, howdy, nvidia, …)
 ```
 
@@ -43,7 +44,8 @@ Feature yamls (`manifests/features/*.yaml`) are self-contained: each bundles its
 
 ## Key files to edit
 
-- **`karuboniru-packages.yaml`**: Add/remove packages, toggle features via `include:`, change repos, edit postprocess or `add-files`. Currently targets `releasever: 45`.
+- Edit the corresponding file under **`manifests/packages/`** to add or remove personal packages.
+- **`karuboniru-packages.yaml`**: Select package groups and features via `include:`, change repos, edit postprocess or `add-files`. Currently targets `releasever: 45`.
 - **`.repo` files** at root: Edit when adding/updating DNF repository definitions.
 - **`etc/`**: Overlay config files embedded into the image at compose time.
 

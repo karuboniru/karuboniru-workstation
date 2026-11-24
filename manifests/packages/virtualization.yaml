@@ -1,0 +1,33 @@
+packages:
+  # Virtualization & containers
+  - agent-vm
+  - virt-install
+  - libvirt-dbus
+  - libvirt-daemon
+  - libvirt-daemon-config-network
+  - libvirt-gconfig
+  - libvirt-gobject
+  # Explicit libvirt-daemon-kvm dependencies, without the nwfilter driver.
+  - libvirt-daemon-common
+  - libvirt-daemon-driver-interface
+  - libvirt-daemon-driver-network
+  - libvirt-daemon-driver-nodedev
+  - libvirt-daemon-driver-qemu
+  - libvirt-daemon-driver-secret
+  - libvirt-daemon-driver-storage
+  - libvirt-daemon-lock
+  - libvirt-daemon-log
+  - libvirt-daemon-plugin-lockd
+  - libvirt-daemon-proxy
+  - libvirt-ssh-proxy
+  - qemu-kvm
+  - virt-manager
+  - virt-viewer
+  - libguestfs-tools
+  - python3-libguestfs
+  - virt-top
+  - crun-krun
+  - krunvm
+  - muvm
+  - bcvk
+  - apptainer
