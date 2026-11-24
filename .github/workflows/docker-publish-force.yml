@@ -48,7 +48,7 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: ${{ vars.COMPOSEFILE }}
         run: |
-          dnf -y --enablerepo=updates-testing install rpm-ostree skopeo jq diffutils selinux-policy-targeted clang
+          dnf -y --enablerepo=updates-testing install rpm-ostree zstd skopeo jq diffutils selinux-policy-targeted clang
           df -h /host
           for i in '__t/*' 'usr/local/' '/usr/share/dotnet' '/opt' ; do
             rm -rf /host/$i || true

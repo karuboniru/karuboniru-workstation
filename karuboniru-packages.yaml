@@ -20,7 +20,7 @@ include:
   # - manifests/features/nvidia.yaml
 arch-include:
   x86_64:
-    - manifests/features/codex-tui.yaml
+    - manifests/features/codex-tui/manifest.yaml
 ref: fedora/45/${basearch}/karuboniru-silverblue
 releasever: 45
 rojig:
