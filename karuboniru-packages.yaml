@@ -18,9 +18,6 @@ include:
   # - manifests/features/aptx.yaml
   # - manifests/features/latex.yaml
   # - manifests/features/nvidia.yaml
-arch-include:
-  x86_64:
-    - manifests/features/codex-tui/manifest.yaml
 ref: fedora/45/${basearch}/karuboniru-silverblue
 releasever: 45
 rojig:
@@ -53,12 +50,24 @@ repos:
   - fedora-updates
   - fedora-updates-testing
   - vscode
+  - terra
   - dummy
   - pythia6
   - agent-vm
   - NetBird
   # - llvm-snapshot
   # - llvm-snapshot-rundep
+
+repo-packages:
+  - repo: terra
+    packages:
+      - terra-release
+      - codex
+      - zellij
+      - zed-cli
+      - zed
+      - typst
+      - typst-zsh-completion
 
 postprocess:
   - |
