@@ -61,7 +61,6 @@ repos:
 repo-packages:
   - repo: terra
     packages:
-      - terra-release
       - codex
       - zellij
       - zed-cli

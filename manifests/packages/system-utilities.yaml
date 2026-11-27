@@ -1,6 +1,7 @@
 packages:
   # Shell & system utilities
   - zsh
+  - vim-default-editor
   - ripgrep
   - htop
   - wireguard-tools
